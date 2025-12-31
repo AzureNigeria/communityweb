@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Compliance on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/compliance/</link>
+    <description>Recent content in Compliance on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 14 Mar 2026 11:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/compliance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Governance, Risk &amp; Compliance</title>
+      <link>http://localhost:1313/series/azure-security-leadership/governance-risk-compliance/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/governance-risk-compliance/</guid>
+      <description>&lt;p&gt;Build governance guardrails and compliance readiness for Azure teams.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Azure Policy, blueprints, and audit trails&lt;/li&gt;&#xA;&lt;li&gt;Risk registers and compliance mapping&lt;/li&gt;&#xA;&lt;li&gt;Operational governance practices&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

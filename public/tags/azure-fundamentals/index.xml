@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure Fundamentals on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/azure-fundamentals/</link>
+    <description>Recent content in Azure Fundamentals on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 Jan 2025 14:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure-fundamentals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recap: Our First Virtual Azure Workshop</title>
+      <link>http://localhost:1313/blog/first-event-recap/</link>
+      <pubDate>Sun, 12 Jan 2025 14:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/blog/first-event-recap/</guid>
+      <description>&lt;p&gt;Our first community workshop brought together hundreds of learners across Nigeria.&lt;/p&gt;&#xA;&lt;h2 id=&#34;key-takeaways&#34;&gt;Key Takeaways&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cloud basics and core Azure services&lt;/li&gt;&#xA;&lt;li&gt;Cost management strategies&lt;/li&gt;&#xA;&lt;li&gt;Certification preparation roadmap&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;whats-next&#34;&gt;What’s Next&lt;/h2&gt;&#xA;&lt;p&gt;More hands-on labs, live Q&amp;amp;A, and certification study sessions are on the way.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Fundamentals Workshop Recap</title>
+      <link>http://localhost:1313/events/fundamentals-recap/</link>
+      <pubDate>Fri, 10 Jan 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/events/fundamentals-recap/</guid>
+      <description>&lt;p&gt;Our kickoff Azure Fundamentals session brought together learners across Nigeria to explore the Azure cloud platform.&lt;/p&gt;&#xA;&lt;h2 id=&#34;session-highlights&#34;&gt;Session Highlights&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Core Azure services overview&lt;/li&gt;&#xA;&lt;li&gt;Pricing and cost management basics&lt;/li&gt;&#xA;&lt;li&gt;Cloud security fundamentals&lt;/li&gt;&#xA;&lt;li&gt;AZ-900 exam preparation strategy&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;recording--resources&#34;&gt;Recording &amp;amp; Resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/@nigeriaazurecommunity1704&#34;&gt;Watch the recording&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/azure-nigeria/azure-fundamentals&#34;&gt;Slides&lt;/a&gt; and &lt;a href=&#34;https://github.com/azurenigeria/azure-fundamentals&#34;&gt;sample repo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

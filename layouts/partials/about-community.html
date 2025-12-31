@@ -1,0 +1,17 @@
+<section class="section section-light" id="about">
+  <div class="container split">
+    <div>
+      <h2>About the Community</h2>
+      <p>Azure Nigeria Community is a thriving community of developers, cloud enthusiasts, and tech professionals passionate about Microsoft Azure and cloud technologies.</p>
+      <p>Our mission is to build, nurture, and showcase Nigerian talent through hands-on training, real-world projects, and community collaboration.</p>
+    </div>
+    <div class="stats-grid">
+      {{ range .Site.Data.stats.items }}
+        <div class="stat-card">
+          <p class="stat-value">{{ .value }}</p>
+          <p class="stat-label">{{ .label }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Production on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/production/</link>
+    <description>Recent content in Production on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 07 Mar 2026 11:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/production/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure in Production</title>
+      <link>http://localhost:1313/events/cloud-leadership-azure-in-production-mar-2026/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/events/cloud-leadership-azure-in-production-mar-2026/</guid>
+      <description>&lt;p&gt;Continue the Cloud Leadership Series with a second Azure in Production session focused on operational excellence and real-world Azure stories.&lt;/p&gt;&#xA;&lt;p&gt;This series runs virtually every Saturday at 11am to 12pm WAT and may be subject to name change.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Scaling practices and performance tuning for production Azure apps&lt;/li&gt;&#xA;&lt;li&gt;Incident response basics for cloud workloads&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;who-should-attend&#34;&gt;Who Should Attend&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cloud engineers and reliability teams&lt;/li&gt;&#xA;&lt;li&gt;Azure practitioners preparing for production launches&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Azure in Production</title>
+      <link>http://localhost:1313/events/cloud-leadership-azure-in-production-feb-2026/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/events/cloud-leadership-azure-in-production-feb-2026/</guid>
+      <description>&lt;p&gt;Join the Cloud Leadership Series for an Azure in Production deep dive focused on real-world use cases from Azure engineers.&lt;/p&gt;&#xA;&lt;p&gt;This series runs virtually every Saturday at 11am to 12pm WAT and may be subject to name change.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Production readiness and launch checklists for Azure workloads&lt;/li&gt;&#xA;&lt;li&gt;Reliability and monitoring patterns teams can apply immediately&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;who-should-attend&#34;&gt;Who Should Attend&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cloud engineers and platform teams&lt;/li&gt;&#xA;&lt;li&gt;Developers shipping Azure workloads to production&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

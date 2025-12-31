@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CI/CD on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/ci/cd/</link>
+    <description>Recent content in CI/CD on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 15 Feb 2025 18:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ci/cd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering Azure DevOps Pipelines</title>
+      <link>http://localhost:1313/events/azure-devops-workshop/</link>
+      <pubDate>Sat, 15 Feb 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/events/azure-devops-workshop/</guid>
+      <description>&lt;p&gt;Get a deep, practical walkthrough of Azure DevOps pipelines from configuration to advanced release orchestration.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Pipeline architecture and YAML structuring&lt;/li&gt;&#xA;&lt;li&gt;Secure secrets and environment approvals&lt;/li&gt;&#xA;&lt;li&gt;Strategies for multi-stage deployments&lt;/li&gt;&#xA;&lt;li&gt;Debugging pipeline failures quickly&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Basic Azure knowledge&lt;/li&gt;&#xA;&lt;li&gt;An Azure DevOps account&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

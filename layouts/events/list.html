@@ -1,0 +1,27 @@
+{{ define "main" }}
+  <section class="page-hero tint">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / Events</p>
+      <h1>Community Events</h1>
+      <p class="lead">Hands-on workshops, meetups, and deep dives for Azure builders.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="tabs" data-tabs="events">
+        <button class="tab active" data-tab="upcoming">Upcoming</button>
+        <button class="tab" data-tab="past">Past Events</button>
+      </div>
+      <div class="grid cards-3" data-tab-content="events" data-tab-panel="upcoming">
+        {{ range where .Pages "Params.status" "upcoming" }}
+          {{ partial "event-card.html" . }}
+        {{ end }}
+      </div>
+      <div class="grid cards-3 hidden" data-tab-content="events" data-tab-panel="past">
+        {{ range where .Pages "Params.status" "past" }}
+          {{ partial "event-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

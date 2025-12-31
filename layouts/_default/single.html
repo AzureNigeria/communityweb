@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / {{ .Title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.excerpt }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+  <section class="section">
+    <div class="container content">
+      {{ .Content }}
+    </div>
+  </section>
+{{ end }}

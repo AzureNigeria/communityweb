@@ -1,0 +1,35 @@
+{{ define "main" }}
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / {{ .Title }}</p>
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ .Params.description | default "Tell us about your Azure expertise and the topic you'd like to present." }}</p>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="container form-layout">
+      <div class="form-card">
+        <p class="eyebrow">Volunteer Track</p>
+        <h2>Volunteer with the Community</h2>
+        <p>Help us run events, manage community programs, or lend your design and content skills to grow Azure Nigeria.</p>
+        <ul class="form-list">
+          <li>Community ops and event logistics</li>
+          <li>Design, content, and social media</li>
+          <li>Partnerships and outreach</li>
+        </ul>
+        <a class="btn-primary btn-small" href="{{ .Site.Params.forms.volunteer }}" target="_blank" rel="noreferrer">Volunteer Form</a>
+      </div>
+      <div class="form-card">
+        <p class="eyebrow">Speaker Track</p>
+        <h2>Share Your Knowledge as a Speaker</h2>
+        <p>Pitch a session on Azure architecture, certifications, or real-world projects and inspire the community.</p>
+        <ul class="form-list">
+          <li>Architecture, security, and DevOps</li>
+          <li>Certification prep and career growth</li>
+          <li>Case studies from real projects</li>
+        </ul>
+        <a class="btn-primary btn-small" href="{{ .Site.Params.forms.speaker }}" target="_blank" rel="noreferrer">Speaker Form</a>
+      </div>
+    </div>
+  </section>
+{{ end }}

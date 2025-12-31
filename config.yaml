@@ -1,0 +1,64 @@
+baseURL: "https://azurenigeria.pages.dev"
+languageCode: "en"
+title: "Azure Nigeria Community"
+disableLiveReload: true
+
+params:
+  description: "Building Cloud Skills Across Nigeria - Azure Nigeria Community"
+  author: "Azure Nigeria Community"
+  theme_creator: "Olu Olofinyo"
+
+  newsletter:
+    enabled: true
+    provider: "convertkit"
+    form_id: "a79ad2d967"
+    email_field: "email"
+    name_field: "name"
+    action: "/subscribe"
+
+  forms:
+    volunteer: "https://docs.google.com/forms/d/e/1FAIpQLSefFfnWR-NIcTJ51iGz1fiqXZ0eoXHxuDbc9iKOVc-ThcG7WQ/viewform"
+    speaker: "https://docs.google.com/forms/d/e/1FAIpQLSdaxJJ8MUUNOQY9HnC0DfOp8g3F8cyUPAnvopPOugf12A256g/viewform"
+
+  homepage:
+    hero:
+      headline: "Building Cloud Skills Across Nigeria"
+      subheadline: "A thriving community of developers, cloud enthusiasts, and tech professionals passionate about Microsoft Azure."
+      cta_text: "View Next Session"
+      cta_link: "#upcoming-session"
+
+    show_about: true
+    show_upcoming_events: true
+    events_to_show: 3
+    show_newsletter: true
+    show_join_cta: true
+
+menu:
+  main:
+    - name: "Get Involved"
+      url: "/register-to-speak"
+      weight: 1
+    - name: "Study Series"
+      url: "/series"
+      weight: 2
+    - name: "Events"
+      url: "/events"
+      weight: 3
+    - name: "Blog"
+      url: "/blog"
+      weight: 4
+    - name: "Join Community"
+      url: "https://rebrand.ly/azurenigcommunity-meetup"
+      weight: 5
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: "monokai"
+
+outputs:
+  home: ["HTML", "RSS"]
+  page: ["HTML"]
+  section: ["HTML", "RSS"]

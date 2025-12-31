@@ -1,0 +1,15 @@
+{{ define "main" }}
+  {{ partial "hero.html" . }}
+  {{ if .Site.Params.homepage.show_about }}
+    {{ partial "about-community.html" . }}
+  {{ end }}
+  {{ if .Site.Params.homepage.show_upcoming_events }}
+    {{ partial "upcoming-events.html" . }}
+  {{ end }}
+  {{ if .Site.Params.homepage.show_newsletter }}
+    {{ partial "newsletter-section.html" . }}
+  {{ end }}
+  {{ if .Site.Params.homepage.show_join_cta }}
+    {{ partial "join-cta.html" . }}
+  {{ end }}
+{{ end }}

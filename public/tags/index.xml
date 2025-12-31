@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Mar 2026 11:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Azure</title>
+      <link>http://localhost:1313/tags/azure/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Incident Response</title>
+      <link>http://localhost:1313/tags/incident-response/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/incident-response/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Threat Detection</title>
+      <link>http://localhost:1313/tags/threat-detection/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/threat-detection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Compliance</title>
+      <link>http://localhost:1313/tags/compliance/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/compliance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Governance</title>
+      <link>http://localhost:1313/tags/governance/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/governance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud Leadership</title>
+      <link>http://localhost:1313/tags/cloud-leadership/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cloud-leadership/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Production</title>
+      <link>http://localhost:1313/tags/production/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/production/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DevSecOps</title>
+      <link>http://localhost:1313/tags/devsecops/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/devsecops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pipelines</title>
+      <link>http://localhost:1313/tags/pipelines/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/pipelines/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Protection</title>
+      <link>http://localhost:1313/tags/data-protection/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/data-protection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infrastructure</title>
+      <link>http://localhost:1313/tags/infrastructure/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Access</title>
+      <link>http://localhost:1313/tags/access/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/access/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Identity</title>
+      <link>http://localhost:1313/tags/identity/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/identity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>http://localhost:1313/tags/security/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zero Trust</title>
+      <link>http://localhost:1313/tags/zero-trust/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/zero-trust/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AZ-900</title>
+      <link>http://localhost:1313/tags/az-900/</link>
+      <pubDate>Mon, 20 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/az-900/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Career</title>
+      <link>http://localhost:1313/tags/career/</link>
+      <pubDate>Mon, 20 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/career/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Certification</title>
+      <link>http://localhost:1313/tags/certification/</link>
+      <pubDate>Mon, 20 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/certification/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure Fundamentals</title>
+      <link>http://localhost:1313/tags/azure-fundamentals/</link>
+      <pubDate>Sun, 12 Jan 2025 14:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/azure-fundamentals/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Community</title>
+      <link>http://localhost:1313/tags/community/</link>
+      <pubDate>Sun, 12 Jan 2025 14:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/community/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workshop</title>
+      <link>http://localhost:1313/tags/workshop/</link>
+      <pubDate>Sun, 12 Jan 2025 14:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/workshop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud Basics</title>
+      <link>http://localhost:1313/tags/cloud-basics/</link>
+      <pubDate>Fri, 10 Jan 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/cloud-basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Learning</title>
+      <link>http://localhost:1313/tags/learning/</link>
+      <pubDate>Sun, 05 Jan 2025 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/learning/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+{{ define "main" }}
+  <section class="page-hero tint">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / Blog</p>
+      <h1>Community Blog</h1>
+      <p class="lead">Insights, guides, and highlights from the Azure Nigeria community.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      {{ $featured := first 1 (where .Pages "Params.featured" true) }}
+      {{ if gt (len $featured) 0 }}
+        {{ range $featured }}
+          <article class="featured-post">
+            <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" />
+            <div>
+              <span class="badge">Featured</span>
+              <h2>{{ .Title }}</h2>
+              <p class="muted">{{ .Params.excerpt }}</p>
+              <a class="text-link" href="{{ .RelPermalink }}">Read the story →</a>
+            </div>
+          </article>
+        {{ end }}
+      {{ end }}
+      <div class="grid cards-3">
+        {{ range where .Pages "Params.featured" "ne" true }}
+          {{ partial "blog-card.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

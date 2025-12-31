@@ -1,0 +1,36 @@
+<header class="site-header">
+  <nav class="navbar container">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="Azure Nigeria Community">
+      <img src="{{ "images/Azure-Full.png" | relURL }}" alt="Azure Nigeria Community" />
+    </a>
+    <div class="nav-actions">
+      <ul class="nav-links" id="primary-navigation">
+        {{ range .Site.Menus.main }}
+          {{ $isExternal := hasPrefix .URL "http" }}
+          {{ $href := cond $isExternal .URL (.URL | relURL) }}
+          {{ if ne .Name "Join Community" }}
+            <li>
+              <a class="nav-link {{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}active{{ end }}" href="{{ $href }}"{{ if $isExternal }} target="_blank" rel="noreferrer"{{ end }}{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} aria-current="page"{{ end }}>
+                {{ .Name }}
+              </a>
+            </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      {{ $joinItems := where .Site.Menus.main "Name" "Join Community" }}
+      {{ if gt (len $joinItems) 0 }}
+        {{ $join := index $joinItems 0 }}
+        {{ $joinIsExternal := hasPrefix $join.URL "http" }}
+        {{ $joinHref := cond $joinIsExternal $join.URL ($join.URL | relURL) }}
+        <a class="btn-primary nav-cta" href="{{ $joinHref }}"{{ if $joinIsExternal }} target="_blank" rel="noreferrer"{{ end }}>
+          {{ $join.Name }}
+        </a>
+      {{ end }}
+      <button class="nav-toggle-label" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>

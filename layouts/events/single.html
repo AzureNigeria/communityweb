@@ -1,0 +1,96 @@
+{{ define "main" }}
+  {{ $status := lower .Params.status }}
+  {{ $startISO := .Date.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $endISO := "" }}
+  {{ with .Params.end_date }}
+    {{ $endISO = (time .).Format "2006-01-02T15:04:05-07:00" }}
+  {{ end }}
+  {{ $locationName := .Params.location }}
+  {{ $isVirtual := or (eq (lower $locationName) "virtual") (eq (lower $locationName) "online") }}
+  {{ $location := dict "@type" "Place" "name" $locationName }}
+  {{ if $isVirtual }}
+    {{ $location = dict "@type" "VirtualLocation" "url" .Params.registration_url }}
+  {{ end }}
+  {{ $eventStatus := "https://schema.org/EventScheduled" }}
+  {{ if or (eq $status "past") (eq $status "completed") }}
+    {{ $eventStatus = "https://schema.org/EventCompleted" }}
+  {{ end }}
+  {{ $eventSchema := dict "@context" "https://schema.org" "@type" "Event" "name" .Title "description" (.Params.description | default .Summary | plainify) "startDate" $startISO "endDate" $endISO "eventAttendanceMode" (cond $isVirtual "https://schema.org/OnlineEventAttendanceMode" "https://schema.org/OfflineEventAttendanceMode") "eventStatus" $eventStatus "location" $location "image" (slice (.Params.featured_image | absURL)) "organizer" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL) "url" .Permalink }}
+  <script type="application/ld+json">{{ $eventSchema | jsonify }}</script>
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / <a href="{{ "/events" | relURL }}">Events</a></p>
+      <h1>{{ .Title }}</h1>
+      <div class="hero-badges">
+        <span class="badge"><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />{{ .Date.Format "Jan 02, 2006" }}</span>
+        <span class="badge"><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ .Date.Format "3:04 PM" }}</span>
+        <span class="badge"><img src="{{ "images/icons/map-pin.svg" | relURL }}" alt="Location icon" />{{ .Params.location }}</span>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container two-column">
+      <article class="content">
+        {{ .Content }}
+      </article>
+      <aside class="sidebar">
+        {{ if or (eq $status "past") (eq $status "completed") }}
+          <button class="btn-primary" type="button" disabled>Registration Closed</button>
+        {{ else }}
+          <a class="btn-primary" href="{{ .Params.registration_url }}" target="_blank" rel="noreferrer">Register</a>
+        {{ end }}
+        <div class="card speaker-card">
+          <img src="{{ .Params.speaker_image | relURL }}" alt="{{ .Params.speaker }}" loading="lazy" decoding="async" />
+          <h4>{{ .Params.speaker }}</h4>
+          <p class="muted">{{ .Params.speaker_title }}</p>
+          <p>{{ .Params.speaker_bio }}</p>
+        </div>
+        {{ with .Params.recording_url }}
+          <div class="card">
+            <h4>Recording</h4>
+            <a class="btn-secondary btn-small" href="{{ . }}" target="_blank" rel="noreferrer">Watch Recording</a>
+          </div>
+        {{ end }}
+        <div class="card">
+          <h4>Share</h4>
+          <button class="btn-secondary share-btn" type="button" data-share data-share-title="{{ .Title }}" data-share-url="{{ .Permalink }}">
+            <img src="{{ "images/icons/share.svg" | relURL }}" alt="" />Share Event
+          </button>
+        </div>
+        {{ $start := .Date.Format "20060102T150405Z" }}
+        {{ $end := (time .Params.end_date).Format "20060102T150405Z" }}
+        {{ $youtubeLink := "" }}
+        {{ with .Site.Data.social.youtube.url }}
+          {{ $youtubeLink = . }}
+        {{ end }}
+        {{ $details := .Params.description | default .Summary }}
+        {{ if $youtubeLink }}
+          {{ $details = printf "%s\n\nWatch live: %s" $details $youtubeLink }}
+        {{ end }}
+        {{ $details = printf "%s\n\nReminder: 30 minutes before start." $details }}
+        {{ $icsDetails := replace $details "\n" "\\n" }}
+        {{ $gcal := printf "https://calendar.google.com/calendar/render?action=TEMPLATE&text=%s&dates=%s/%s&details=%s&location=%s" (.Title | urlquery) $start $end ($details | urlquery) (.Params.location | urlquery) }}
+        {{ $ics := printf "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:%s\nDTSTART:%s\nDTEND:%s\nDESCRIPTION:%s\nLOCATION:%s\nBEGIN:VALARM\nTRIGGER:-PT30M\nACTION:DISPLAY\nDESCRIPTION:Reminder\nEND:VALARM\nEND:VEVENT\nEND:VCALENDAR" .Title $start $end $icsDetails .Params.location }}
+        <div class="card">
+          <h4>Add to Calendar</h4>
+          <div class="icon-row">
+            <a class="icon-btn" href="{{ $gcal }}" target="_blank" rel="noreferrer"><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Calendar icon" />Google</a>
+            <a class="icon-btn" href="data:text/calendar;charset=utf-8,{{ $ics | urlquery }}" download="{{ .File.BaseFileName }}.ics"><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Calendar icon" />iCal</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section section-light">
+    <div class="container">
+      <h2>Related Events</h2>
+      <div class="grid cards-3">
+        {{ range first 3 (where .Site.RegularPages "Section" "events") }}
+          {{ if ne .Permalink $.Permalink }}
+            {{ partial "event-card.html" . }}
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

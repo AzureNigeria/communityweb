@@ -1,0 +1,20 @@
+{{ $status := lower .Params.status }}
+<article class="card event-card">
+  <div class="card-image">
+    <img src="{{ .Params.featured_image | relURL }}" alt="Event cover for {{ .Title }}" loading="lazy" decoding="async" />
+    <span class="badge date-badge">{{ .Date.Format "Jan 02" }}</span>
+  </div>
+  <div class="card-body">
+    <h3>{{ .Title }}</h3>
+    <p class="muted">{{ .Params.description }}</p>
+    <div class="meta">
+      <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ .Date.Format "3:04 PM" }}</span>
+      <span><img src="{{ "images/icons/map-pin.svg" | relURL }}" alt="Location icon" />{{ .Params.location }}</span>
+    </div>
+    {{ if or (eq $status "past") (eq $status "completed") }}
+      <a class="btn-secondary btn-small" href="{{ .RelPermalink }}">View Recap</a>
+    {{ else }}
+      <a class="btn-primary" href="{{ .RelPermalink }}">Register</a>
+    {{ end }}
+  </div>
+</article>

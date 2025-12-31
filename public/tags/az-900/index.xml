@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AZ-900 on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/az-900/</link>
+    <description>Recent content in AZ-900 on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 20 Jan 2025 10:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/az-900/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top 5 Azure Certifications for Nigerian Developers</title>
+      <link>http://localhost:1313/blog/certification-guide/</link>
+      <pubDate>Mon, 20 Jan 2025 10:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/blog/certification-guide/</guid>
+      <description>&lt;p&gt;Azure certifications help validate your skills and open doors to new opportunities.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-az-900-azure-fundamentals&#34;&gt;1. AZ-900: Azure Fundamentals&lt;/h2&gt;&#xA;&lt;p&gt;Perfect for beginners starting their cloud journey.&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-az-104-azure-administrator&#34;&gt;2. AZ-104: Azure Administrator&lt;/h2&gt;&#xA;&lt;p&gt;Ideal for professionals managing Azure infrastructure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;3-az-204-azure-developer&#34;&gt;3. AZ-204: Azure Developer&lt;/h2&gt;&#xA;&lt;p&gt;Great for developers building cloud-native apps.&lt;/p&gt;&#xA;&lt;h2 id=&#34;4-dp-900-azure-data-fundamentals&#34;&gt;4. DP-900: Azure Data Fundamentals&lt;/h2&gt;&#xA;&lt;p&gt;Best for data enthusiasts exploring Azure data services.&lt;/p&gt;&#xA;&lt;h2 id=&#34;5-ai-900-azure-ai-fundamentals&#34;&gt;5. AI-900: Azure AI Fundamentals&lt;/h2&gt;&#xA;&lt;p&gt;A strong entry point for AI and machine learning on Azure.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Azure Fundamentals Workshop Recap</title>
+      <link>http://localhost:1313/events/fundamentals-recap/</link>
+      <pubDate>Fri, 10 Jan 2025 18:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/events/fundamentals-recap/</guid>
+      <description>&lt;p&gt;Our kickoff Azure Fundamentals session brought together learners across Nigeria to explore the Azure cloud platform.&lt;/p&gt;&#xA;&lt;h2 id=&#34;session-highlights&#34;&gt;Session Highlights&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Core Azure services overview&lt;/li&gt;&#xA;&lt;li&gt;Pricing and cost management basics&lt;/li&gt;&#xA;&lt;li&gt;Cloud security fundamentals&lt;/li&gt;&#xA;&lt;li&gt;AZ-900 exam preparation strategy&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;recording--resources&#34;&gt;Recording &amp;amp; Resources&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/@nigeriaazurecommunity1704&#34;&gt;Watch the recording&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/azure-nigeria/azure-fundamentals&#34;&gt;Slides&lt;/a&gt; and &lt;a href=&#34;https://github.com/azurenigeria/azure-fundamentals&#34;&gt;sample repo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / <a href="{{ "/series" | relURL }}">Study Series</a></p>
+      <h1>{{ .Title }}</h1>
+      <div class="hero-badges">
+        <span class="badge">{{ .Params.theme }}</span>
+        <span class="badge"><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Sessions icon" />{{ .Params.total_sessions }} Sessions</span>
+        <span class="badge">{{ .Params.status | title }}</span>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container two-column">
+      <article class="content">
+        {{ .Content }}
+      </article>
+      {{ $status := lower .Params.status }}
+      <aside class="sidebar">
+        {{ if eq $status "ongoing" }}
+          <button class="btn-primary btn-small sidebar-cta" type="button" data-button-link="https://meetup.com/azure-nigeria">Join Next Session</button>
+        {{ else }}
+          <button class="btn-primary btn-small sidebar-cta" type="button" disabled>Series Completed</button>
+        {{ end }}
+        <div class="card">
+          <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" class="sidebar-image" loading="lazy" decoding="async" />
+          <h4>Series Details</h4>
+          <p><strong>Instructor:</strong> {{ .Params.instructor }}</p>
+          <p><strong>Next Session:</strong> {{ with .Params.next_session_date }}{{ . | time | dateFormat "Jan 02, 2006" }}{{ else }}TBA{{ end }}</p>
+          <div class="icon-row">
+            <a class="icon-btn" href="{{ .Site.Data.social.youtube.url }}" target="_blank" rel="noreferrer"><img src="{{ "images/icons/youtube.svg" | relURL }}" alt="YouTube icon" />YouTube</a>
+            <a class="icon-btn" href="{{ .Site.Data.social.linkedin.url }}" target="_blank" rel="noreferrer"><img src="{{ "images/icons/linkedin.svg" | relURL }}" alt="LinkedIn icon" />LinkedIn</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Share</h4>
+          <button class="btn-secondary share-btn" type="button" data-share data-share-title="{{ .Title }}" data-share-url="{{ .Permalink }}">
+            <img src="{{ "images/icons/share.svg" | relURL }}" alt="" />Share Series
+          </button>
+        </div>
+      </aside>
+    </div>
+  </section>
+{{ end }}

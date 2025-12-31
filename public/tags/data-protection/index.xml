@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Protection on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/data-protection/</link>
+    <description>Recent content in Data Protection on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Feb 2026 11:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/data-protection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infrastructure &amp; Data Protection</title>
+      <link>http://localhost:1313/series/azure-security-leadership/infrastructure-data-protection/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/infrastructure-data-protection/</guid>
+      <description>&lt;p&gt;Learn how to protect Azure infrastructure and data with segmentation, encryption, and recovery planning.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Network segmentation and encryption baselines&lt;/li&gt;&#xA;&lt;li&gt;Backup, recovery, and resilience planning&lt;/li&gt;&#xA;&lt;li&gt;Protecting data throughout its lifecycle&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

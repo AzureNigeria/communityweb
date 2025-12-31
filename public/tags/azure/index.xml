@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/azure/</link>
+    <description>Recent content in Azure on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Mar 2026 11:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Threat Detection, Incident Response &amp; AI Safety</title>
+      <link>http://localhost:1313/series/azure-security-leadership/threat-detection-incident-response-ai-safety/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/threat-detection-incident-response-ai-safety/</guid>
+      <description>&lt;p&gt;Prepare your team for detection and response with Azure-native tooling and AI safety practices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sentinel playbooks and response readiness&lt;/li&gt;&#xA;&lt;li&gt;AI safety guardrails for production systems&lt;/li&gt;&#xA;&lt;li&gt;Monitoring and alerting best practices&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Governance, Risk &amp; Compliance</title>
+      <link>http://localhost:1313/series/azure-security-leadership/governance-risk-compliance/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/governance-risk-compliance/</guid>
+      <description>&lt;p&gt;Build governance guardrails and compliance readiness for Azure teams.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Azure Policy, blueprints, and audit trails&lt;/li&gt;&#xA;&lt;li&gt;Risk registers and compliance mapping&lt;/li&gt;&#xA;&lt;li&gt;Operational governance practices&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Azure in Production</title>
+      <link>http://localhost:1313/events/cloud-leadership-azure-in-production-mar-2026/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/events/cloud-leadership-azure-in-production-mar-2026/</guid>
+      <description>&lt;p&gt;Continue the Cloud Leadership Series with a second Azure in Production session focused on operational excellence and real-world Azure stories.&lt;/p&gt;&#xA;&lt;p&gt;This series runs virtually every Saturday at 11am to 12pm WAT and may be subject to name change.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Scaling practices and performance tuning for production Azure apps&lt;/li&gt;&#xA;&lt;li&gt;Incident response basics for cloud workloads&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;who-should-attend&#34;&gt;Who Should Attend&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cloud engineers and reliability teams&lt;/li&gt;&#xA;&lt;li&gt;Azure practitioners preparing for production launches&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>DevSecOps Engineering</title>
+      <link>http://localhost:1313/series/azure-security-leadership/devsecops-engineering/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/devsecops-engineering/</guid>
+      <description>&lt;p&gt;Embed security into delivery pipelines with practical DevSecOps patterns for Azure teams.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Secure pipelines and policy-driven deployments&lt;/li&gt;&#xA;&lt;li&gt;Secrets management and scanning automation&lt;/li&gt;&#xA;&lt;li&gt;Compliance-ready delivery workflows&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Infrastructure &amp; Data Protection</title>
+      <link>http://localhost:1313/series/azure-security-leadership/infrastructure-data-protection/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/infrastructure-data-protection/</guid>
+      <description>&lt;p&gt;Learn how to protect Azure infrastructure and data with segmentation, encryption, and recovery planning.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Network segmentation and encryption baselines&lt;/li&gt;&#xA;&lt;li&gt;Backup, recovery, and resilience planning&lt;/li&gt;&#xA;&lt;li&gt;Protecting data throughout its lifecycle&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Azure in Production</title>
+      <link>http://localhost:1313/events/cloud-leadership-azure-in-production-feb-2026/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/events/cloud-leadership-azure-in-production-feb-2026/</guid>
+      <description>&lt;p&gt;Join the Cloud Leadership Series for an Azure in Production deep dive focused on real-world use cases from Azure engineers.&lt;/p&gt;&#xA;&lt;p&gt;This series runs virtually every Saturday at 11am to 12pm WAT and may be subject to name change.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Production readiness and launch checklists for Azure workloads&lt;/li&gt;&#xA;&lt;li&gt;Reliability and monitoring patterns teams can apply immediately&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;who-should-attend&#34;&gt;Who Should Attend&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Cloud engineers and platform teams&lt;/li&gt;&#xA;&lt;li&gt;Developers shipping Azure workloads to production&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Identity &amp; Access Management</title>
+      <link>http://localhost:1313/series/azure-security-leadership/identity-access-management/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/identity-access-management/</guid>
+      <description>&lt;p&gt;Strengthen identity and access controls with Entra ID fundamentals and role-based access management.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Entra ID fundamentals and RBAC patterns&lt;/li&gt;&#xA;&lt;li&gt;Privileged access workflows and MFA strategy&lt;/li&gt;&#xA;&lt;li&gt;Identity governance essentials&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Cloud Security &amp; Zero Trust</title>
+      <link>http://localhost:1313/series/azure-security-leadership/cloud-security-zero-trust/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/cloud-security-zero-trust/</guid>
+      <description>&lt;p&gt;Build a security-first foundation for Azure workloads with zero trust strategies and practical guardrails.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Zero trust principles for Azure environments&lt;/li&gt;&#xA;&lt;li&gt;Security posture planning for modern teams&lt;/li&gt;&#xA;&lt;li&gt;Practical steps to harden new deployments&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Welcome to Azure Nigeria Community</title>
+      <link>http://localhost:1313/blog/welcome-post/</link>
+      <pubDate>Sun, 05 Jan 2025 09:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/blog/welcome-post/</guid>
+      <description>&lt;p&gt;Azure Nigeria Community is a thriving community of developers, cloud enthusiasts, and tech professionals passionate about Microsoft Azure and cloud technologies. Our mission is to build, nurture, and showcase Nigerian talent in the global cloud computing space.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-do&#34;&gt;What We Do&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Instructor-led training and hands-on workshops from Azure fundamentals to advanced services&lt;/li&gt;&#xA;&lt;li&gt;Real-world projects to build solutions with Azure technologies&lt;/li&gt;&#xA;&lt;li&gt;Networking and collaboration with fellow developers and industry professionals&lt;/li&gt;&#xA;&lt;li&gt;Knowledge sharing with experienced Azure practitioners and Microsoft MVPs&lt;/li&gt;&#xA;&lt;li&gt;Career development and certification prep for cloud roles&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;how-to-get-involved&#34;&gt;How to Get Involved&lt;/h2&gt;&#xA;&lt;p&gt;Join our Meetup, attend sessions, and start building with the community. Follow us on LinkedIn and Twitter/X for updates and event announcements.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

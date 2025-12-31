@@ -1,0 +1,19 @@
+<article class="card series-card">
+  <div class="card-image">
+    <img src="{{ .Params.thumbnail | relURL }}" alt="Series cover for {{ .Title }}" loading="lazy" decoding="async" />
+    <span class="badge">{{ .Params.theme }}</span>
+  </div>
+  <div class="card-body">
+    <h3>{{ .Title }}</h3>
+    <p class="muted">{{ .Params.description }}</p>
+    <div class="meta">
+      <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Sessions icon" />{{ .Params.total_sessions }} Sessions</span>
+      <span class="status-badge {{ .Params.status }}">{{ .Params.status | title }}</span>
+    </div>
+    <div class="icon-row">
+      <a href="{{ .Site.Data.social.youtube.url }}" target="_blank" rel="noreferrer" class="icon-btn"><img src="{{ "images/icons/youtube.svg" | relURL }}" alt="YouTube icon" />YouTube</a>
+      <a href="{{ .Site.Data.social.linkedin.url }}" target="_blank" rel="noreferrer" class="icon-btn"><img src="{{ "images/icons/linkedin.svg" | relURL }}" alt="LinkedIn icon" />LinkedIn</a>
+    </div>
+    <a class="btn-primary" href="{{ .RelPermalink }}">View Details</a>
+  </div>
+</article>

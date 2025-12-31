@@ -1,0 +1,138 @@
+{{ define "main" }}
+  {{ $seriesDir := .File.Dir }}
+  {{ $seriesPattern := printf "^%s" $seriesDir }}
+  {{ $sessions := sort (where .Site.RegularPages "File.Dir" "like" $seriesPattern) "Date" }}
+  {{ $now := now }}
+  {{ $upcoming := where $sessions "Date" "ge" $now }}
+  {{ $past := where $sessions "Date" "lt" $now }}
+  {{ $next := false }}
+  {{ if gt (len $upcoming) 0 }}
+    {{ $next = index $upcoming 0 }}
+  {{ end }}
+  {{ $statusLabel := "Completed" }}
+  {{ if gt (len $upcoming) 0 }}
+    {{ if gt (len $past) 0 }}
+      {{ $statusLabel = "Ongoing" }}
+    {{ else }}
+      {{ $statusLabel = "Upcoming" }}
+    {{ end }}
+  {{ end }}
+  {{ $totalSessions := len $sessions }}
+  {{ if eq $totalSessions 0 }}
+    {{ $totalSessions = .Params.total_sessions }}
+  {{ end }}
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / <a href="{{ "/series" | relURL }}">Study Series</a></p>
+      <h1>{{ .Title }}</h1>
+      <div class="hero-badges">
+        <span class="badge">{{ .Params.theme }}</span>
+        <span class="badge"><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Sessions icon" />{{ $totalSessions }} Sessions</span>
+        <span class="badge">{{ $statusLabel }}</span>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container two-column">
+      <article class="content">
+        {{ .Content }}
+        {{ if gt (len $sessions) 0 }}
+          <div class="series-session-list">
+            <h2>Series Sessions</h2>
+            {{ if gt (len $upcoming) 0 }}
+              <div class="series-session-group">
+                <h3>Upcoming Sessions</h3>
+                <ul class="series-session-items">
+                  {{ range $upcoming }}
+                    <li class="series-session-item">
+                      <div class="series-session-card">
+                        <div class="series-session-top">
+                          <div class="series-session-heading">
+                            <span class="series-session-title">{{ .Title }}</span>
+                            <span class="status-badge upcoming">Upcoming</span>
+                          </div>
+                        </div>
+                        <div class="series-session-meta">
+                          <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />{{ .Date.Format "Jan 02, 2006" }}</span>
+                          <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ .Date.Format "3:04 PM" }}</span>
+                          {{ with .Params.speaker }}
+                            <span><img src="{{ "images/icons/user.svg" | relURL }}" alt="Speaker icon" />{{ . }}</span>
+                          {{ end }}
+                        </div>
+                        {{ with .Params.description }}
+                          <p class="muted">{{ . }}</p>
+                        {{ end }}
+                        <a class="btn-secondary btn-small series-session-cta" href="{{ .RelPermalink }}">More Info</a>
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ else }}
+              <p class="muted">No upcoming sessions are scheduled right now.</p>
+            {{ end }}
+            {{ if gt (len $past) 0 }}
+              <div class="series-session-group">
+                <h3>Past Sessions</h3>
+                <ul class="series-session-items">
+                  {{ range $past }}
+                    <li class="series-session-item">
+                      <div class="series-session-card">
+                        <div class="series-session-top">
+                          <div class="series-session-heading">
+                            <span class="series-session-title">{{ .Title }}</span>
+                            <span class="status-badge past">Past</span>
+                          </div>
+                        </div>
+                        <div class="series-session-meta">
+                          <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />{{ .Date.Format "Jan 02, 2006" }}</span>
+                          <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ .Date.Format "3:04 PM" }}</span>
+                          {{ with .Params.speaker }}
+                            <span><img src="{{ "images/icons/user.svg" | relURL }}" alt="Speaker icon" />{{ . }}</span>
+                          {{ end }}
+                        </div>
+                        {{ with .Params.description }}
+                          <p class="muted">{{ . }}</p>
+                        {{ end }}
+                        <a class="btn-secondary btn-small series-session-cta" href="{{ .RelPermalink }}">More Info</a>
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </article>
+      <aside class="sidebar">
+        {{ if $next }}
+          {{ $nextLink := $next.RelPermalink }}
+          {{ with $next.Params.registration_url }}
+            {{ $nextLink = . }}
+          {{ end }}
+          {{ $isExternal := hasPrefix $nextLink "http" }}
+          <a class="btn-primary" href="{{ $nextLink }}"{{ if $isExternal }} target="_blank" rel="noreferrer"{{ end }}>Join Next Session</a>
+        {{ else }}
+          <button class="btn-primary" type="button" disabled>Series Completed</button>
+        {{ end }}
+        <div class="card">
+          <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}" class="sidebar-image" loading="lazy" decoding="async" />
+          <h4>Series Details</h4>
+          <p><strong>Instructor:</strong> {{ .Params.instructor }}</p>
+          <p><strong>Next Session:</strong> {{ if $next }}{{ $next.Date.Format "Jan 02, 2006" }}{{ else if .Params.next_session_date }}{{ .Params.next_session_date | time | dateFormat "Jan 02, 2006" }}{{ else }}TBA{{ end }}</p>
+          <div class="icon-row">
+            <a class="icon-btn" href="{{ .Site.Data.social.youtube.url }}" target="_blank" rel="noreferrer"><img src="{{ "images/icons/youtube.svg" | relURL }}" alt="YouTube icon" />YouTube</a>
+            <a class="icon-btn" href="{{ .Site.Data.social.linkedin.url }}" target="_blank" rel="noreferrer"><img src="{{ "images/icons/linkedin.svg" | relURL }}" alt="LinkedIn icon" />LinkedIn</a>
+          </div>
+        </div>
+        <div class="card">
+          <h4>Share</h4>
+          <button class="btn-secondary share-btn" type="button" data-share data-share-title="{{ .Title }}" data-share-url="{{ .Permalink }}">
+            <img src="{{ "images/icons/share.svg" | relURL }}" alt="" />Share Series
+          </button>
+        </div>
+      </aside>
+    </div>
+  </section>
+ 
+{{ end }}

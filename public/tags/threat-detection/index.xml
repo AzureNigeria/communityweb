@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Threat Detection on Azure Nigeria Community</title>
+    <link>http://localhost:1313/tags/threat-detection/</link>
+    <description>Recent content in Threat Detection on Azure Nigeria Community</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Mar 2026 11:00:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/threat-detection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Threat Detection, Incident Response &amp; AI Safety</title>
+      <link>http://localhost:1313/series/azure-security-leadership/threat-detection-incident-response-ai-safety/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0100</pubDate>
+      <guid>http://localhost:1313/series/azure-security-leadership/threat-detection-incident-response-ai-safety/</guid>
+      <description>&lt;p&gt;Prepare your team for detection and response with Azure-native tooling and AI safety practices.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sentinel playbooks and response readiness&lt;/li&gt;&#xA;&lt;li&gt;AI safety guardrails for production systems&lt;/li&gt;&#xA;&lt;li&gt;Monitoring and alerting best practices&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

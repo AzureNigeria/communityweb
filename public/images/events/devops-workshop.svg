@@ -1,0 +1,8 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="500" fill="#F0F9FF"/>
+  <rect x="60" y="80" width="680" height="340" rx="24" fill="#0A2540"/>
+  <path d="M140 180H660" stroke="#00D9FF" stroke-width="4"/>
+  <path d="M140 240H560" stroke="#00FFB3" stroke-width="4"/>
+  <path d="M140 300H520" stroke="#00D9FF" stroke-width="4"/>
+  <text x="120" y="150" font-family="Poppins, sans-serif" font-size="32" fill="#FFFFFF" font-weight="600">Azure DevOps Pipelines</text>
+</svg>

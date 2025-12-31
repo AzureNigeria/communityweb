@@ -1,0 +1,56 @@
+{{ define "main" }}
+  <section class="page-hero tint">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / Study Series</p>
+      <h1>Study Series</h1>
+      <p class="lead">Structured tracks that take you from fundamentals to advanced Azure skills.</p>
+    </div>
+  </section>
+  {{ $current := where .Pages "Params.status" "ongoing" }}
+  {{ $upcoming := where .Pages "Params.status" "upcoming" }}
+  {{ $past := where .Pages "Params.status" "completed" }}
+  {{ $hasUpcoming := gt (len $upcoming) 0 }}
+  {{ $hasCurrent := gt (len $current) 0 }}
+  {{ $defaultTab := "past" }}
+  {{ if $hasUpcoming }}
+    {{ $defaultTab = "upcoming" }}
+  {{ else if $hasCurrent }}
+    {{ $defaultTab = "current" }}
+  {{ end }}
+  <section class="section">
+    <div class="container">
+      <div class="tabs" data-tabs="series">
+        <button class="tab {{ if eq $defaultTab "upcoming" }}active{{ end }}" data-tab="upcoming">Upcoming</button>
+        <button class="tab {{ if eq $defaultTab "current" }}active{{ end }}" data-tab="current">Current</button>
+        <button class="tab {{ if eq $defaultTab "past" }}active{{ end }}" data-tab="past">Past Series</button>
+      </div>
+      <div class="grid cards-3 series-grid {{ if ne $defaultTab "upcoming" }}hidden{{ end }}" data-tab-content="series" data-tab-panel="upcoming">
+        {{ if $hasUpcoming }}
+          {{ range $upcoming }}
+            {{ partial "series-card.html" . }}
+          {{ end }}
+        {{ else }}
+          <p>No upcoming study series yet. Check back soon.</p>
+        {{ end }}
+      </div>
+      <div class="grid cards-3 series-grid {{ if ne $defaultTab "current" }}hidden{{ end }}" data-tab-content="series" data-tab-panel="current">
+        {{ if $hasCurrent }}
+          {{ range $current }}
+            {{ partial "series-card.html" . }}
+          {{ end }}
+        {{ else }}
+          <p>There is no current study series right now.</p>
+        {{ end }}
+      </div>
+      <div class="grid cards-3 series-grid {{ if ne $defaultTab "past" }}hidden{{ end }}" data-tab-content="series" data-tab-panel="past">
+        {{ if gt (len $past) 0 }}
+          {{ range $past }}
+            {{ partial "series-card.html" . }}
+          {{ end }}
+        {{ else }}
+          <p>No past study series yet.</p>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

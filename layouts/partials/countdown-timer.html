@@ -1,0 +1,86 @@
+{{ $now := now }}
+{{ $events := where (where .Site.RegularPages "Section" "events") "Params.status" "upcoming" }}
+{{ $events = where $events "Date" "ge" $now }}
+{{ $seriesSessions := where (where .Site.RegularPages "Section" "series") "Params.layout" "series-session" }}
+{{ $seriesSessions = where $seriesSessions "Date" "ge" $now }}
+{{ $candidates := slice }}
+{{ range $events }}
+  {{ $candidates = $candidates | append . }}
+{{ end }}
+{{ range $seriesSessions }}
+  {{ $candidates = $candidates | append . }}
+{{ end }}
+{{ $next := false }}
+{{ if gt (len $candidates) 0 }}
+  {{ $next = index (sort $candidates "Date") 0 }}
+{{ end }}
+<div class="countdown-card" id="upcoming-session">
+  <div class="countdown-info">
+    <div class="countdown-header">
+      <p class="status">Upcoming Live Session</p>
+    </div>
+    {{ if $next }}
+      {{ $isSeriesSession := and (eq $next.Section "series") (eq $next.Params.layout "series-session") }}
+      {{ $topic := $next.Title }}
+      {{ $subtopic := "" }}
+      {{ if $isSeriesSession }}
+        {{ with $next.Parent }}
+          {{ $topic = .Title }}
+          {{ $subtopic = $next.Title }}
+        {{ else }}
+          {{ $subtopic = $next.Title }}
+        {{ end }}
+      {{ else }}
+        {{ $titleParts := split $next.Title ":" }}
+        {{ if gt (len $titleParts) 1 }}
+          {{ $topic = index $titleParts 0 | strings.TrimSpace }}
+          {{ $subtopic = delimit (after 1 $titleParts) ":" | strings.TrimSpace }}
+        {{ else if $next.Params.subtitle }}
+          {{ $subtopic = $next.Params.subtitle }}
+        {{ else if $next.Params.description }}
+          {{ $subtopic = $next.Params.description }}
+        {{ end }}
+      {{ end }}
+      <h3 class="upcoming-title">
+        <span class="upcoming-topic">{{ $topic }}</span>
+        {{ if $subtopic }}
+          <span class="upcoming-subtopic">{{ $subtopic }}</span>
+        {{ end }}
+      </h3>
+    {{ else }}
+      <h3 class="upcoming-title">
+        <span class="upcoming-topic">Next Session Announcing Soon</span>
+        <span class="upcoming-subtopic">Stay tuned for our upcoming Azure deep dive.</span>
+      </h3>
+    {{ end }}
+  </div>
+  <div class="countdown-meta">
+    {{ if $next }}
+      <div class="upcoming-meta">
+        <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />{{ $next.Date.Format "Jan 02, 2006" }}</span>
+        <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ $next.Date.Format "3:04 PM" }}</span>
+        {{ with $next.Params.speaker }}
+          <span class="upcoming-speaker"><img src="{{ "images/icons/user.svg" | relURL }}" alt="Speaker icon" />{{ . }}{{ with $next.Params.speaker_title }} <span class="speaker-title">- {{ . }}</span>{{ end }}</span>
+        {{ end }}
+      </div>
+      <div class="countdown-actions">
+        {{ $ctaLink := $next.RelPermalink }}
+        {{ $ctaLabel := "View Details" }}
+        {{ with $next.Params.registration_url }}
+          {{ $ctaLink = . }}
+          {{ $ctaLabel = "Register" }}
+        {{ end }}
+        {{ $isExternal := hasPrefix $ctaLink "http" }}
+        <a class="btn-secondary btn-small" href="{{ $ctaLink }}"{{ if $isExternal }} target="_blank" rel="noreferrer"{{ end }}>{{ $ctaLabel }}</a>
+      </div>
+    {{ else }}
+      <div class="upcoming-meta">
+        <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />TBA</span>
+        <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />TBA</span>
+      </div>
+      <div class="countdown-actions">
+        <a class="btn-secondary btn-small" href="{{ "/events" | relURL }}">View Events</a>
+      </div>
+    {{ end }}
+  </div>
+</div>

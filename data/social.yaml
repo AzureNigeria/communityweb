@@ -1,0 +1,19 @@
+meetup:
+  name: "Meetup"
+  url: "https://www.meetup.com/nigeria-microsoft-azure-meetup-group/"
+  icon: "meetup"
+
+linkedin:
+  name: "LinkedIn"
+  url: "https://rebrand.ly/azurenigcommunity-linkedin"
+  icon: "linkedin"
+
+youtube:
+  name: "YouTube"
+  url: "https://www.youtube.com/@nigeriaazurecommunity1704"
+  icon: "youtube"
+
+twitter:
+  name: "Twitter"
+  url: "https://twitter.com/azurenigeria"
+  icon: "twitter"

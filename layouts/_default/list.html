@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / {{ .Title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.excerpt }}<p class="lead">{{ . }}</p>{{ end }}
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      {{ .Content }}
+      <div class="grid cards-3">
+        {{ range .Pages }}
+          {{ if eq .Section "events" }}
+            {{ partial "event-card.html" . }}
+          {{ else if eq .Section "series" }}
+            {{ partial "series-card.html" . }}
+          {{ else if eq .Section "blog" }}
+            {{ partial "blog-card.html" . }}
+          {{ else }}
+            <article class="card">
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p class="muted">{{ .Summary }}</p>
+            </article>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
