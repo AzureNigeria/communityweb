@@ -50,3 +50,8 @@ If you prefer editing via `/admin`, ensure the repo and OAuth settings in `stati
 - Output directory: `public`
 
 For full deployment steps, see `deploymentguide.md` in the repo root.
+
+## Author
+
+Olu Olofinyo  
+LinkedIn: https://www.linkedin.com/in/oluwaseyeolofinyo/
