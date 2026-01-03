@@ -6,6 +6,7 @@
   {{ if .Site.Params.homepage.show_upcoming_events }}
     {{ partial "upcoming-events.html" . }}
   {{ end }}
+  {{ partial "free-voucher-cta.html" . }}
   {{ if .Site.Params.homepage.show_newsletter }}
     {{ partial "newsletter-section.html" . }}
   {{ end }}

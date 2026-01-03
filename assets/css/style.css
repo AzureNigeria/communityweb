@@ -1427,6 +1427,256 @@ p {
   margin-top: 1.5rem;
 }
 
+.cert-cta {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cert-cta-card {
+  background: var(--bg-white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: var(--card-shadow);
+  display: grid;
+  gap: 0.8rem;
+}
+
+.cert-cta-card h3 {
+  margin-top: 0;
+  text-transform: none;
+}
+
+.exam-hero {
+  padding: 5rem 0;
+  background: linear-gradient(120deg, rgba(0, 217, 255, 0.18), rgba(242, 241, 237, 0.95) 55%, rgba(0, 255, 179, 0.14));
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+.exam-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(420px circle at 15% 20%, rgba(10, 37, 64, 0.08), transparent 60%),
+    radial-gradient(520px circle at 85% 10%, rgba(0, 217, 255, 0.2), transparent 70%);
+  pointer-events: none;
+}
+
+.exam-hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.exam-hero-copy h1 {
+  text-transform: none;
+}
+
+.exam-subhead {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-primary);
+  margin-top: 1rem;
+}
+
+.exam-note {
+  margin-top: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  max-width: 520px;
+}
+
+.exam-hero-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.8rem;
+  box-shadow: var(--card-shadow);
+  display: grid;
+  gap: 1.2rem;
+  backdrop-filter: blur(6px);
+}
+
+.exam-hero-card h2 {
+  text-transform: none;
+  margin-top: 0;
+}
+
+.exam-date-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.exam-date-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed rgba(10, 37, 64, 0.18);
+}
+
+.exam-date-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.exam-card-highlight {
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  background: rgba(10, 37, 64, 0.06);
+  border: 1px solid rgba(10, 37, 64, 0.12);
+}
+
+.exam-hero-glow {
+  position: absolute;
+  right: -140px;
+  top: -160px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.35), transparent 70%);
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
+.exam-values,
+.exam-slot-grid,
+.exam-steps,
+.exam-grid,
+.exam-split {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.exam-card,
+.exam-slot-card,
+.exam-note-card,
+.exam-cta-panel {
+  background: var(--bg-white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+}
+
+.exam-card h3,
+.exam-slot-card h3 {
+  margin-top: 0;
+}
+
+.exam-slot-card {
+  text-align: center;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.exam-slot {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.exam-steps {
+  border-top: 1px solid var(--line);
+}
+
+.exam-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.exam-step span {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  color: #ffffff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 16px rgba(6, 24, 41, 0.2);
+}
+
+.exam-step h3 {
+  margin-top: 0;
+}
+
+.exam-warning {
+  background: var(--primary-dark);
+  border-radius: 18px;
+  padding: 1.8rem;
+  color: #ffffff;
+  box-shadow: 0 14px 28px rgba(6, 24, 41, 0.25);
+}
+
+.exam-warning h3 {
+  color: #ffffff;
+  text-transform: none;
+}
+
+.exam-warning p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.exam-note-card h3 {
+  text-transform: none;
+  margin-top: 0;
+}
+
+.exam-cta-panel {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+.exam-cta-panel h2 {
+  text-transform: none;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .cert-cta {
+    grid-template-columns: 1.4fr 0.6fr;
+  }
+
+  .exam-hero-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .exam-values,
+  .exam-slot-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .exam-split {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .exam-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .exam-cta-panel {
+    grid-template-columns: 1.2fr auto;
+  }
+}
+
 .footer-form input {
   background: transparent;
   border: 1px solid var(--line);

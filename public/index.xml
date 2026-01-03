@@ -107,6 +107,13 @@
       <description>&lt;p&gt;This series is designed for engineers ready to ship and automate production-grade workloads on Azure.&lt;/p&gt;&#xA;&lt;h2 id=&#34;series-outline&#34;&gt;Series Outline&lt;/h2&gt;&#xA;&lt;h3 id=&#34;session-1-introduction-completed&#34;&gt;Session 1: Introduction (Completed)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Azure DevOps platform overview&lt;/li&gt;&#xA;&lt;li&gt;Setting up projects and permissions&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/@nigeriaazurecommunity1704&#34;&gt;Watch Recording&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;session-2-repositories-completed&#34;&gt;Session 2: Repositories (Completed)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Git workflows with Azure Repos&lt;/li&gt;&#xA;&lt;li&gt;Branch policies and code reviews&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/@nigeriaazurecommunity1704&#34;&gt;Watch Recording&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;session-3-build-pipelines-completed&#34;&gt;Session 3: Build Pipelines (Completed)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;YAML pipelines&lt;/li&gt;&#xA;&lt;li&gt;Build agents and caching&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;session-4-release-pipelines-completed&#34;&gt;Session 4: Release Pipelines (Completed)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Release strategies and approvals&lt;/li&gt;&#xA;&lt;li&gt;Environment promotion workflows&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;session-5-infrastructure-as-code-completed&#34;&gt;Session 5: Infrastructure as Code (Completed)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;ARM/Bicep deployment patterns&lt;/li&gt;&#xA;&lt;li&gt;Reusable pipeline templates&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;session-6-monitoring-and-governance-completed&#34;&gt;Session 6: Monitoring and Governance (Completed)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Pipeline observability&lt;/li&gt;&#xA;&lt;li&gt;Compliance-ready audit trails&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
+      <title>Free Voucher Program</title>
+      <link>http://localhost:1313/free-voucher/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/free-voucher/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Get Involved</title>
       <link>http://localhost:1313/register-to-speak/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

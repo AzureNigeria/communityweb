@@ -18,7 +18,7 @@
       <ul>
         <li><a href="{{ "/" | relURL }}#about">About</a></li>
         <li><a href="mailto:hello@azurenigeria.community">Contact</a></li>
-        <li><a href="https://aka.ms/azure" target="_blank" rel="noreferrer">Microsoft Learn</a></li>
+        <li><a href="{{ "/free-voucher" | relURL }}">Free Voucher Program</a></li>
         <li><a href="https://developer.microsoft.com/" target="_blank" rel="noreferrer">Developer Programs</a></li>
       </ul>
     </div>
@@ -51,7 +51,7 @@
           {{ $nameField = . }}
         {{ end }}
         {{ if and (eq $provider "convertkit") (ne $formId "") }}
-          {{ $action = printf "https://app.convertkit.com/forms/%s/subscriptions" $formId }}
+          {{ $action = printf "https://app.kit.com/forms/%s/subscriptions" $formId }}
           {{ $emailField = "email_address" }}
         {{ end }}
         <form class="newsletter-form footer-form" action="{{ $action }}" method="post" novalidate>

@@ -19,6 +19,7 @@ params:
   forms:
     volunteer: "https://docs.google.com/forms/d/e/1FAIpQLSefFfnWR-NIcTJ51iGz1fiqXZ0eoXHxuDbc9iKOVc-ThcG7WQ/viewform"
     speaker: "https://docs.google.com/forms/d/e/1FAIpQLSdaxJJ8MUUNOQY9HnC0DfOp8g3F8cyUPAnvopPOugf12A256g/viewform"
+    exam_support: "https://docs.google.com/forms/d/e/REPLACE_WITH_EXAM_SUPPORT_FORM/viewform"
 
   homepage:
     hero:
@@ -35,21 +36,24 @@ params:
 
 menu:
   main:
+    - name: "Free Voucher"
+      url: "/free-voucher"
+      weight: 1
     - name: "Get Involved"
       url: "/register-to-speak"
-      weight: 1
+      weight: 2
     - name: "Study Series"
       url: "/series"
-      weight: 2
+      weight: 3
     - name: "Events"
       url: "/events"
-      weight: 3
+      weight: 4
     - name: "Blog"
       url: "/blog"
-      weight: 4
+      weight: 5
     - name: "Join Community"
       url: "https://rebrand.ly/azurenigcommunity-meetup"
-      weight: 5
+      weight: 6
 
 markup:
   goldmark:

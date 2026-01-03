@@ -1,0 +1,237 @@
+{{ define "main" }}
+  <section class="exam-hero">
+    <div class="container exam-hero-grid">
+      <div class="exam-hero-copy">
+        <p class="eyebrow">January–March 2026 Cohort</p>
+        <h1>{{ .Title }}</h1>
+        <p class="exam-subhead">Earn a free certification voucher by committing to a fixed timeline and completing every required step.</p>
+        <div class="hero-badges">
+          <span class="badge">Apply by Jan 24, 2026</span>
+          <span class="badge">Exam deadline: Mar 27, 2026</span>
+          <span class="badge">Pass + submit proof by Mar 27</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn-primary" href="{{ .Site.Params.forms.exam_support | default "https://docs.google.com/forms" }}" target="_blank" rel="noreferrer">Apply</a>
+          <a class="btn-secondary" href="#program-details">See how it works</a>
+        </div>
+        <p class="exam-note">This program is free, but it is not casual. Voucher eligibility is earned by completing every requirement.</p>
+      </div>
+      <div class="exam-hero-card">
+        <p class="eyebrow">Key Dates</p>
+        <h2>Fixed, non-negotiable timeline</h2>
+        <ul class="exam-date-list">
+          <li>
+            <span>Applications close</span>
+            <strong>January 24, 2026</strong>
+          </li>
+          <li>
+            <span>Program window</span>
+            <strong>January–March 2026</strong>
+          </li>
+          <li>
+            <span>Exam completion deadline</span>
+            <strong>March 27, 2026</strong>
+          </li>
+        </ul>
+        <div class="exam-card-highlight">
+          <p class="eyebrow">Eligibility</p>
+          <p>Voucher selection is only for candidates who complete every program requirement.</p>
+        </div>
+      </div>
+    </div>
+    <div class="exam-hero-glow" aria-hidden="true"></div>
+  </section>
+
+  <section id="program-details" class="section section-alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">What You Get</p>
+        <h2>A free certification voucher</h2>
+        <p class="lead">Eligibility for the voucher draw is earned by completing every requirement in the program.</p>
+      </div>
+      <div class="exam-values">
+        <article class="exam-card">
+          <h3>Voucher draw after completion</h3>
+          <p>Complete the program requirements, pass the exam, and submit proof of your result to qualify.</p>
+        </article>
+        <article class="exam-card">
+          <h3>Weekly cohort rhythm</h3>
+          <p>Attend all study series sessions through the quarter to stay on track with the deadline.</p>
+        </article>
+        <article class="exam-card">
+          <h3>Clear finish line</h3>
+          <p>March 27, 2026 is the hard stop. The timeline is designed for focused execution.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Available Certifications</p>
+        <h2>Limited slots by track</h2>
+      </div>
+      <div class="exam-slot-grid">
+        <article class="exam-slot-card">
+          <p class="exam-slot">1 slot</p>
+          <h3>AZ-104</h3>
+          <p class="muted">Azure Administrator Associate</p>
+        </article>
+        <article class="exam-slot-card">
+          <p class="exam-slot">2 slots</p>
+          <h3>AZ-500</h3>
+          <p class="muted">Azure Security Engineer Associate</p>
+        </article>
+        <article class="exam-slot-card">
+          <p class="exam-slot">1 slot</p>
+          <h3>SC-100</h3>
+          <p class="muted">Cybersecurity Architect Expert</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">How It Works</p>
+        <h2>Four steps, no detours</h2>
+      </div>
+      <div class="exam-steps">
+        <div class="exam-step">
+          <span>1</span>
+          <div>
+            <h3>Apply by January 24, 2026</h3>
+            <p>Confirm your readiness and ability to meet the timeline.</p>
+          </div>
+        </div>
+        <div class="exam-step">
+          <span>2</span>
+          <div>
+            <h3>Prepare with the cohort</h3>
+            <p>Join structured study sessions and accountability check-ins.</p>
+          </div>
+        </div>
+        <div class="exam-step">
+          <span>3</span>
+          <div>
+            <h3>Sit the exam by March 27, 2026</h3>
+            <p>This deadline is firm and non-negotiable.</p>
+          </div>
+        </div>
+        <div class="exam-step">
+          <span>4</span>
+          <div>
+            <h3>Submit proof and qualify for the voucher draw</h3>
+            <p>Passing the exam and submitting proof by March 27, 2026 is required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container exam-split">
+      <div>
+        <p class="eyebrow">Program Requirements</p>
+        <h2>Complete every item to qualify</h2>
+        <ul class="checklist">
+          <li>Submit interest by January 24, 2026</li>
+          <li>Join all study series sessions through the quarter</li>
+          <li>Sit for the exam no later than March 27, 2026</li>
+          <li>Pass the exam and submit proof of result before March 27, 2026</li>
+        </ul>
+      </div>
+      <div class="exam-warning">
+        <p class="eyebrow">Not Ready Yet?</p>
+        <h3>If you cannot meet every requirement by March 27, 2026, please do not apply.</h3>
+        <p>Voucher eligibility is only for candidates who complete all requirements and pass the exam.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container exam-grid">
+      <div>
+        <p class="eyebrow">Eligibility for Draw</p>
+        <h2>How voucher selection works</h2>
+        <ul class="checklist">
+          <li>Complete all four program requirements</li>
+          <li>Pass the exam and submit proof by March 27, 2026</li>
+          <li>Participate fully in the cohort study series</li>
+          <li>Remain within the January–March 2026 timeline</li>
+        </ul>
+        <p class="muted">Submitting an application does not guarantee selection or eligibility.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Accountability</p>
+        <h2>Pass the exam to qualify</h2>
+        <ul class="checklist">
+          <li>Support is limited and non-transferable</li>
+          <li>Candidates must pass the exam to be eligible</li>
+          <li>Proof of result is required before March 27, 2026</li>
+          <li>Eligibility may be lost if any requirement is missed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Why This Program Exists</p>
+        <h2>Structure increases certification success</h2>
+        <p class="lead">This cohort is part of Azure Nigeria Community’s certification pathway, designed to improve completion rates and build repeatable, outcome-driven programs.</p>
+      </div>
+      <div class="exam-note-card">
+        <h3>Program note</h3>
+        <p>This cohort is a pilot for future partner-supported certification initiatives. Voucher recipients will be selected by public draw on March 27, 2026, from eligible candidates only.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Answers before you apply</h2>
+      </div>
+      <div class="accordion">
+        <details>
+          <summary>What does the voucher cover?</summary>
+          <p>The voucher covers the exam fee for the listed certifications only, issued after verification.</p>
+        </details>
+        <details>
+          <summary>Can I apply if I am not ready by March 27?</summary>
+          <p>No. This cohort is only for candidates who can meet the exam deadline and program requirements.</p>
+        </details>
+        <details>
+          <summary>How is eligibility decided?</summary>
+          <p>Eligibility is earned by completing all four requirements and passing the exam.</p>
+        </details>
+        <details>
+          <summary>What proof do I need to submit?</summary>
+          <p>Submit proof of exam result after you pass to qualify for the voucher draw.</p>
+        </details>
+        <details>
+          <summary>Can I change certifications after applying?</summary>
+          <p>Slot allocations are fixed. Changes may not be possible due to limited availability.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="exam-cta-panel">
+        <div>
+          <p class="eyebrow">Ready to Commit?</p>
+          <h2>Apply for a certification voucher</h2>
+          <p class="lead">If you are prepared to meet every requirement and pass within this window, we want to hear from you.</p>
+        </div>
+        <a class="btn-primary" href="{{ .Site.Params.forms.exam_support | default "https://docs.google.com/forms" }}" target="_blank" rel="noreferrer">Apply</a>
+      </div>
+    </div>
+  </section>
+{{ end }}

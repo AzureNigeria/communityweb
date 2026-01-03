@@ -23,7 +23,7 @@
       {{ $nameField = . }}
     {{ end }}
     {{ if and (eq $provider "convertkit") (ne $formId "") }}
-      {{ $action = printf "https://app.convertkit.com/forms/%s/subscriptions" $formId }}
+      {{ $action = printf "https://app.kit.com/forms/%s/subscriptions" $formId }}
       {{ $emailField = "email_address" }}
       {{ $nameField = "first_name" }}
     {{ end }}

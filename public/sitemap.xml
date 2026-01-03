@@ -131,6 +131,8 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/free-voucher/</loc>
+  </url><url>
     <loc>http://localhost:1313/register-to-speak/</loc>
   </url><url>
     <loc>http://localhost:1313/privacy/</loc>

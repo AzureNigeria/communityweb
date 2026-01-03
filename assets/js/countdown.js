@@ -218,10 +218,39 @@
           }
           return;
         }
-        if (message) {
-          message.hidden = false;
+        const action = form.getAttribute("action");
+        if (!action) {
+          return;
         }
-        form.reset();
+        if (form.dataset.submitting === "true") {
+          return;
+        }
+        form.dataset.submitting = "true";
+        const payload = new FormData(form);
+        fetch(action, {
+          method: "POST",
+          body: payload,
+          mode: "cors",
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Subscribe failed");
+            }
+            if (message) {
+              message.hidden = false;
+            }
+            form.reset();
+          })
+          .catch(() => {
+            form.dataset.submitting = "false";
+            form.submit();
+          })
+          .finally(() => {
+            form.dataset.submitting = "false";
+          });
       });
     });
   };

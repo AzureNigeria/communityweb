@@ -202,6 +202,12 @@ tags: ["Azure", "Career"]
 - If you need to change the wording of a section, edit the corresponding partial in `layouts/partials/`.
 - If you need to change the stats or social links, edit `data/stats.yaml` or `data/social.yaml`.
 
+## Pre-commit Checks Before Raising an MR
+
+1) Install pre-commit if needed: `pipx install pre-commit` (or `pip install pre-commit`).
+2) Enable git hooks: `pre-commit install`.
+3) Run the checks locally before opening a PR: `pre-commit run --all-files`.
+
 ## Images
 
 - Place new images in `static/images/` and reference them as `/images/...` in Markdown front matter or templates.
