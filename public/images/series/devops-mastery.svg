@@ -1,7 +1,0 @@
-<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="500" fill="#F0F9FF"/>
-  <rect x="90" y="90" width="620" height="320" rx="28" fill="#0A2540"/>
-  <text x="140" y="220" font-family="Poppins, sans-serif" font-size="34" fill="#FFFFFF" font-weight="600">DevOps Mastery</text>
-  <text x="140" y="265" font-family="Poppins, sans-serif" font-size="18" fill="#00D9FF">6 Sessions · CI/CD Excellence</text>
-  <circle cx="600" cy="210" r="60" fill="#00FFB3" opacity="0.7"/>
-</svg>

@@ -1,8 +1,0 @@
-<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="500" fill="#F8FAFC"/>
-  <rect x="80" y="110" width="640" height="280" rx="30" fill="#0A2540"/>
-  <path d="M120 190H680" stroke="#00FFB3" stroke-width="4"/>
-  <path d="M120 250H580" stroke="#00D9FF" stroke-width="4"/>
-  <path d="M120 310H520" stroke="#00FFB3" stroke-width="4"/>
-  <text x="120" y="170" font-family="Poppins, sans-serif" font-size="32" fill="#FFFFFF" font-weight="600">Azure Fundamentals</text>
-</svg>

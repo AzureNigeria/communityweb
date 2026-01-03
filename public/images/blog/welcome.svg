@@ -1,6 +1,0 @@
-<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="500" fill="#F8FAFC"/>
-  <circle cx="220" cy="240" r="160" fill="#00D9FF" opacity="0.25"/>
-  <circle cx="520" cy="260" r="140" fill="#00FFB3" opacity="0.25"/>
-  <text x="120" y="240" font-family="Poppins, sans-serif" font-size="34" fill="#0A2540" font-weight="600">Welcome to Azure Nigeria</text>
-</svg>

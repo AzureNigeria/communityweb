@@ -1,8 +1,0 @@
-<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="300" height="200" rx="20" fill="#0A2540"/>
-  <circle cx="90" cy="80" r="30" fill="#00D9FF"/>
-  <circle cx="150" cy="70" r="26" fill="#00FFB3"/>
-  <circle cx="210" cy="85" r="30" fill="#0891B2"/>
-  <rect x="60" y="120" width="180" height="40" rx="20" fill="#FFFFFF"/>
-  <text x="150" y="146" text-anchor="middle" font-family="Poppins, sans-serif" font-size="18" fill="#0A2540" font-weight="600">Azure Nigeria Team</text>
-</svg>
