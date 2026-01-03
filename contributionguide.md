@@ -204,9 +204,13 @@ tags: ["Azure", "Career"]
 
 ## Pre-commit Checks Before Raising an MR
 
-1) Install pre-commit if needed: `pipx install pre-commit` (or `pip install pre-commit`).
+1) Install pre-commit (choose one):
+   - macOS (Homebrew): `brew install pre-commit`
+   - Python via pipx: `pipx install pre-commit`
+   - Python via pip: `pip install pre-commit`
 2) Enable git hooks: `pre-commit install`.
-3) Run the checks locally before opening a PR: `pre-commit run --all-files`.
+3) Run checks locally before opening a PR: `pre-commit run --all-files`.
+4) Ensure Node.js is installed (required for JS/CSS/HTML/Markdown hooks).
 
 ## Images
 

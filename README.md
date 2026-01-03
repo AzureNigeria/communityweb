@@ -31,6 +31,16 @@ Site runs at `http://localhost:1313`.
 3. Open a PR and request reviews.
 4. Merge after approvals (main is protected).
 
+## Local Validation (Pre-commit)
+
+1. Install pre-commit (choose one):
+   - macOS (Homebrew): `brew install pre-commit`
+   - Python via pipx: `pipx install pre-commit`
+   - Python via pip: `pip install pre-commit`
+2. Enable hooks: `pre-commit install`.
+3. Run checks locally: `pre-commit run --all-files`.
+4. Ensure Node.js is installed (required for JS/CSS/HTML/Markdown hooks).
+
 ## Editing Content
 
 - Events: `content/events/*.md`
