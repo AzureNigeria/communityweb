@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {{ partial "head.html" . }}
   </head>
   <body class="page-{{ .Kind }}">
     {{ partial "header.html" . }}
-    <main id="main-content">
-      {{ block "main" . }}{{ end }}
-    </main>
-    {{ partial "footer.html" . }}
-    {{ $script := resources.Get "js/countdown.js" | minify | fingerprint }}
+    <main id="main-content">{{ block "main" . }}{{ end }}</main>
+    {{ partial "footer.html" . }} {{ $script := resources.Get "js/countdown.js"
+    | minify | fingerprint }}
     <script src="{{ $script.RelPermalink }}" defer></script>
   </body>
 </html>

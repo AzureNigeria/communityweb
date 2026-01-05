@@ -18,14 +18,17 @@ youtube_url: "https://www.youtube.com/@nigeriaazurecommunity1704"
 slides_url: "https://speakerdeck.com/azure-nigeria/azure-fundamentals"
 github_url: "https://github.com/azurenigeria/azure-fundamentals"
 ---
+
 Our kickoff Azure Fundamentals session brought together learners across Nigeria to explore the Azure cloud platform.
 
 ## Session Highlights
+
 - Core Azure services overview
 - Pricing and cost management basics
 - Cloud security fundamentals
 - AZ-900 exam preparation strategy
 
 ## Recording & Resources
+
 - [Watch the recording](https://www.youtube.com/@nigeriaazurecommunity1704)
 - [Slides](https://speakerdeck.com/azure-nigeria/azure-fundamentals) and [sample repo](https://github.com/azurenigeria/azure-fundamentals)

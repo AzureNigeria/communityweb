@@ -1,16 +1,17 @@
-{{ $limit := .Site.Params.homepage.events_to_show }}
-{{ $events := where (where .Site.RegularPages "Section" "events") "Params.status" "upcoming" }}
-{{ $events = first $limit (sort $events "Date") }}
+{{ $limit := .Site.Params.homepage.events_to_show }} {{ $events := where (where
+.Site.RegularPages "Section" "events") "Params.status" "upcoming" }} {{ $events
+= first $limit (sort $events "Date") }}
 <section class="section">
   <div class="container">
     <div class="section-heading">
       <h2>Upcoming Events</h2>
-      <p>Join our next sessions and workshops designed for Azure builders in Nigeria.</p>
+      <p>
+        Join our next sessions and workshops designed for Azure builders in
+        Nigeria.
+      </p>
     </div>
     <div class="grid cards-3">
-      {{ range $events }}
-        {{ partial "event-card.html" . }}
-      {{ end }}
+      {{ range $events }} {{ partial "event-card.html" . }} {{ end }}
     </div>
   </div>
 </section>

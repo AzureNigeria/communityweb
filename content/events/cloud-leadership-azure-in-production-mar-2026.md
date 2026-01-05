@@ -19,14 +19,17 @@ youtube_url: ""
 slides_url: ""
 github_url: ""
 ---
+
 Continue the Cloud Leadership Series with a second Azure in Production session focused on operational excellence and real-world Azure stories.
 
-This series runs virtually every Saturday at 11am to 12pm WAT and may be subject to name change.
+Sessions run Saturdays from 11:00–12:00 WAT, and topics may change.
 
 ## What You'll Learn
+
 - Scaling practices and performance tuning for production Azure apps
 - Incident response basics for cloud workloads
 
 ## Who Should Attend
+
 - Cloud engineers and reliability teams
 - Azure practitioners preparing for production launches

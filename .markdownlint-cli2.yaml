@@ -3,4 +3,4 @@ config:
   MD013: false
   MD033: false
 ignores:
-  - "azureng-hugo/public/**"
+  - "public/**"

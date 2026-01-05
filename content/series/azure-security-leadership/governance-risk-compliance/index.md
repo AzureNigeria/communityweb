@@ -15,9 +15,11 @@ featured_image: "/images/series/security-leadership.svg"
 description: "Azure Policy, audit readiness, and governance frameworks for cloud teams."
 tags: ["Governance", "Compliance", "Azure"]
 ---
+
 Build governance guardrails and compliance readiness for Azure teams.
 
 ## What You'll Learn
+
 - Azure Policy, blueprints, and audit trails
 - Risk registers and compliance mapping
 - Operational governance practices

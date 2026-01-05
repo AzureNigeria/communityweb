@@ -15,9 +15,11 @@ featured_image: "/images/series/security-leadership.svg"
 description: "Zero trust principles and security posture planning for Azure environments."
 tags: ["Security", "Zero Trust", "Azure"]
 ---
+
 Build a security-first foundation for Azure workloads with zero trust strategies and practical guardrails.
 
 ## What You'll Learn
+
 - Zero trust principles for Azure environments
 - Security posture planning for modern teams
 - Practical steps to harden new deployments

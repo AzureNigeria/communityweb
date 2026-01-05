@@ -55,21 +55,21 @@ This guide explains what each part of the project holds and how to edit or add c
 
 ## Editing Existing Pages
 
-1) Edit Markdown in `content/` for page copy and metadata. For example:
+1. Edit Markdown in `content/` for page copy and metadata. For example:
    - Update event details in `content/events/*.md`.
    - Update a blog post in `content/blog/*.md`.
-2) Update site-wide sections or layout text in `layouts/partials/`.
+1. Update site-wide sections or layout text in `layouts/partials/`.
    - Hero headline/lead text: `layouts/partials/hero.html`
    - About section copy: `layouts/partials/about-community.html`
-3) Update stats and social links in `data/`.
-4) Update images in `static/images/` and reference them with `/images/...` in front matter.
+1. Update stats and social links in `data/`.
+1. Update images in `static/images/` and reference them with `/images/...` in front matter.
 
 ## Creating New Pages
 
 ### New Event
 
-1) Create a new file in `content/events/` (e.g., `content/events/my-event.md`).
-2) Use front matter fields used by templates:
+1. Create a new file in `content/events/` (e.g., `content/events/my-event.md`).
+1. Use front matter fields used by templates:
 
 ```yaml
 ---
@@ -95,12 +95,12 @@ github_url: ""
 ---
 ```
 
-3) Add event body content below the front matter.
+1. Add event body content below the front matter.
 
 ### New Series
 
-1) Create a new file in `content/series/` for single-page series.
-2) Use fields referenced by `layouts/partials/series-card.html` and `layouts/series/single.html`:
+1. Create a new file in `content/series/` for single-page series.
+1. Use fields referenced by `layouts/partials/series-card.html` and `layouts/series/single.html`:
 
 ```yaml
 ---
@@ -118,12 +118,12 @@ description: "One-line summary used on cards."
 ---
 ```
 
-3) Add series overview content below the front matter.
+1. Add series overview content below the front matter.
 
 ### New Series With Sessions (Sub-Series Pages)
 
-1) Create a folder at `content/series/<series-slug>/` and add `_index.md`.
-2) Use `layout: "series-detail"` and add scheduling metadata for the overall series:
+1. Create a folder at `content/series/<series-slug>/` and add `_index.md`.
+1. Use `layout: "series-detail"` and add scheduling metadata for the overall series:
 
 ```yaml
 ---
@@ -145,8 +145,8 @@ description: "One-line summary used on cards."
 ---
 ```
 
-3) Create a subfolder per session at `content/series/<series-slug>/<session-slug>/index.md`.
-4) Use `layout: "series-session"` with the session-specific fields:
+1. Create a subfolder per session at `content/series/<series-slug>/<session-slug>/index.md`.
+1. Use `layout: "series-session"` with the session-specific fields:
 
 ```yaml
 ---
@@ -168,12 +168,12 @@ tags: ["Tag1", "Tag2"]
 ---
 ```
 
-5) Add the session body content below the front matter and keep dates in chronological order.
+1. Add the session body content below the front matter and keep dates in chronological order.
 
 ### New Blog Post
 
-1) Create a new file in `content/blog/`.
-2) Use fields referenced by `layouts/partials/blog-card.html` and `layouts/blog/single.html`:
+1. Create a new file in `content/blog/`.
+1. Use fields referenced by `layouts/partials/blog-card.html` and `layouts/blog/single.html`:
 
 ```yaml
 ---
@@ -188,13 +188,13 @@ tags: ["Azure", "Career"]
 ---
 ```
 
-3) Add post content below the front matter.
+1. Add post content below the front matter.
 
 ### New Standalone Page
 
-1) Add a Markdown file in `content/` (e.g., `content/faq.md`).
-2) Hugo will render it with the default template in `layouts/_default/single.html`.
-3) Add a menu link in `config.yaml` under `menu.main`.
+1. Add a Markdown file in `content/` (e.g., `content/faq.md`).
+1. Hugo will render it with the default template in `layouts/_default/single.html`.
+1. Add a menu link in `config.yaml` under `menu.main`.
 
 ## Editing Content Within Existing Pages
 
@@ -204,13 +204,13 @@ tags: ["Azure", "Career"]
 
 ## Pre-commit Checks Before Raising an MR
 
-1) Install pre-commit (choose one):
+1. Install pre-commit (choose one):
    - macOS (Homebrew): `brew install pre-commit`
    - Python via pipx: `pipx install pre-commit`
    - Python via pip: `pip install pre-commit`
-2) Enable git hooks: `pre-commit install`.
-3) Run checks locally before opening a PR: `pre-commit run --all-files`.
-4) Ensure Node.js is installed (required for JS/CSS/HTML/Markdown hooks).
+1. Enable git hooks: `pre-commit install`.
+1. Run checks locally before opening a PR: `pre-commit run --all-files`.
+1. Ensure Node.js is installed (required for JS/CSS/HTML/Markdown hooks).
 
 ## Images
 
@@ -219,9 +219,9 @@ tags: ["Azure", "Career"]
 
 ## Past Events and Previous Speakers
 
-1) Add a new file to `content/events/` or update an existing event.
-2) Set `status: "past"` and ensure `date`/`end_date` are in the past.
-3) Include speaker details and post-event resources:
+1. Add a new file to `content/events/` or update an existing event.
+1. Set `status: "past"` and ensure `date`/`end_date` are in the past.
+1. Include speaker details and post-event resources:
 
 ```yaml
 ---
@@ -237,7 +237,7 @@ github_url: "https://github.com/..."
 ---
 ```
 
-4) Add recap notes or key takeaways in the body content.
+1. Add recap notes or key takeaways in the body content.
 
 ## Recordings
 

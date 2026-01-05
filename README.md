@@ -63,5 +63,5 @@ For full deployment steps, see `deploymentguide.md` in the repo root.
 
 ## Author
 
-Olu Olofinyo  
-LinkedIn: https://www.linkedin.com/in/oluwaseyeolofinyo/
+Olu Olofinyo
+LinkedIn: [oluwaseyeolofinyo](https://www.linkedin.com/in/oluwaseyeolofinyo/)

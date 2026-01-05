@@ -16,6 +16,7 @@ thumbnail: "/images/series/security-leadership.svg"
 color: "navy"
 description: "A six-part Saturday series focused on secure cloud leadership, governance, and modern Azure defense practices."
 ---
+
 This upcoming series equips Azure builders with security-first fundamentals and leadership-level decision frameworks.
 It runs virtually every Saturday, 11:00–12:00 WAT, from January 31 through March 21, 2026.
 

@@ -15,9 +15,11 @@ featured_image: "/images/series/security-leadership.svg"
 description: "Secure pipelines, policy-driven deployments, and automated scanning practices."
 tags: ["DevSecOps", "Pipelines", "Azure"]
 ---
+
 Embed security into delivery pipelines with practical DevSecOps patterns for Azure teams.
 
 ## What You'll Learn
+
 - Secure pipelines and policy-driven deployments
 - Secrets management and scanning automation
 - Compliance-ready delivery workflows

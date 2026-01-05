@@ -19,14 +19,17 @@ youtube_url: ""
 slides_url: ""
 github_url: ""
 ---
+
 Join the Cloud Leadership Series for an Azure in Production deep dive focused on real-world use cases from Azure engineers.
 
-This series runs virtually every Saturday at 11am to 12pm WAT and may be subject to name change.
+Sessions run Saturdays from 11:00–12:00 WAT, and topics may change.
 
 ## What You'll Learn
+
 - Production readiness and launch checklists for Azure workloads
 - Reliability and monitoring patterns teams can apply immediately
 
 ## Who Should Attend
+
 - Cloud engineers and platform teams
 - Developers shipping Azure workloads to production

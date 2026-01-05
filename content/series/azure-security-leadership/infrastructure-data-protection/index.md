@@ -15,9 +15,11 @@ featured_image: "/images/series/security-leadership.svg"
 description: "Protect infrastructure and data with segmentation, encryption, and resilience planning."
 tags: ["Infrastructure", "Data Protection", "Azure"]
 ---
+
 Learn how to protect Azure infrastructure and data with segmentation, encryption, and recovery planning.
 
 ## What You'll Learn
+
 - Network segmentation and encryption baselines
 - Backup, recovery, and resilience planning
 - Protecting data throughout its lifecycle

@@ -15,9 +15,11 @@ featured_image: "/images/series/security-leadership.svg"
 description: "Sentinel playbooks, response readiness, and AI safety guardrails."
 tags: ["Threat Detection", "Incident Response", "Azure"]
 ---
+
 Prepare your team for detection and response with Azure-native tooling and AI safety practices.
 
 ## What You'll Learn
+
 - Sentinel playbooks and response readiness
 - AI safety guardrails for production systems
 - Monitoring and alerting best practices

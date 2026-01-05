@@ -15,9 +15,11 @@ featured_image: "/images/series/security-leadership.svg"
 description: "Entra ID fundamentals, RBAC patterns, and privileged access workflows."
 tags: ["Identity", "Access", "Azure"]
 ---
+
 Strengthen identity and access controls with Entra ID fundamentals and role-based access management.
 
 ## What You'll Learn
+
 - Entra ID fundamentals and RBAC patterns
 - Privileged access workflows and MFA strategy
 - Identity governance essentials
