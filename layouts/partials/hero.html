@@ -4,13 +4,24 @@
       <p class="eyebrow">Azure Nigeria Community</p>
       <h1>{{ .Site.Params.homepage.hero.headline | default "Building Cloud Skills Across Nigeria" }}</h1>
       <p class="hero-subhead">{{ .Site.Params.homepage.hero.subheadline | default "A thriving community of developers, cloud enthusiasts, and tech professionals passionate about Microsoft Azure." }}</p>
+      <ul class="hero-highlights">
+        <li>Live meetups</li>
+        <li>Study series</li>
+        <li>Hands-on labs</li>
+      </ul>
       <div class="hero-actions">
         <a class="btn-primary" href="{{ .Site.Params.homepage.hero.cta_link }}">{{ .Site.Params.homepage.hero.cta_text }}</a>
         <a class="btn-secondary" href="https://rebrand.ly/azurenigcommunity-meetup" target="_blank" rel="noreferrer">Join Community</a>
       </div>
     </div>
     <div class="hero-media">
-      <img class="hero-map" src="{{ "images/map.svg" | relURL }}" alt="Map of Nigeria" loading="eager" fetchpriority="high" decoding="async" width="520" height="360" />
+      <div class="hero-media-card">
+        <img class="hero-map" src="{{ "images/map.svg" | relURL }}" alt="Map of Nigeria" loading="eager" fetchpriority="high" decoding="async" width="520" height="360" />
+        <div class="hero-media-caption">
+          <span>Community-led learning</span>
+          <span>Across Nigeria</span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container hero-value-strip">

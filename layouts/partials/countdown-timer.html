@@ -14,11 +14,14 @@
 {{ if gt (len $candidates) 0 }}
   {{ $next = index (sort $candidates "Date") 0 }}
 {{ end }}
-<div class="countdown-card" id="upcoming-session">
-  <div class="countdown-info">
-    <div class="countdown-header">
+<div class="countdown-card upcoming-card" id="upcoming-session">
+  <div class="countdown-header">
+    <div class="countdown-kicker">
+      <span class="live-badge" hidden>Live Now</span>
       <p class="status">Upcoming Live Session</p>
     </div>
+  </div>
+  <div class="countdown-info">
     {{ if $next }}
       {{ $isSeriesSession := and (eq $next.Section "series") (eq $next.Params.layout "series-session") }}
       {{ $topic := $next.Title }}
@@ -54,32 +57,70 @@
       </h3>
     {{ end }}
   </div>
-  <div class="countdown-meta">
+  <div class="countdown-body">
     {{ if $next }}
-      <div class="upcoming-meta">
-        <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />{{ $next.Date.Format "Jan 02, 2006" }}</span>
-        <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ $next.Date.Format "3:04 PM" }}</span>
-        {{ with $next.Params.speaker }}
-          <span class="upcoming-speaker"><img src="{{ "images/icons/user.svg" | relURL }}" alt="Speaker icon" />{{ . }}{{ with $next.Params.speaker_title }} <span class="speaker-title">- {{ . }}</span>{{ end }}</span>
-        {{ end }}
+      <div class="countdown" data-countdown="{{ $next.Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        <div class="time-block">
+          <span class="number" data-days>00</span>
+          <span class="label">Days</span>
+        </div>
+        <div class="time-block">
+          <span class="number" data-hours>00</span>
+          <span class="label">Hours</span>
+        </div>
+        <div class="time-block">
+          <span class="number" data-minutes>00</span>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="time-block">
+          <span class="number" data-seconds>00</span>
+          <span class="label">Seconds</span>
+        </div>
       </div>
-      <div class="countdown-actions">
-        {{ $ctaLink := $next.RelPermalink }}
-        {{ $ctaLabel := "View Details" }}
-        {{ with $next.Params.registration_url }}
-          {{ $ctaLink = . }}
-          {{ $ctaLabel = "Register" }}
-        {{ end }}
-        {{ $isExternal := hasPrefix $ctaLink "http" }}
-        <a class="btn-secondary btn-small" href="{{ $ctaLink }}"{{ if $isExternal }} target="_blank" rel="noreferrer"{{ end }}>{{ $ctaLabel }}</a>
+      <div class="countdown-meta">
+        <div class="upcoming-meta">
+          <span>Starts {{ $next.Date.Format "Jan 02, 2006 | 3:04 PM" }} WAT</span>
+          {{ with $next.Params.speaker }}
+            <span class="upcoming-speaker">{{ . }}{{ with $next.Params.speaker_title }} <span class="speaker-title">- {{ . }}</span>{{ end }}</span>
+          {{ end }}
+        </div>
+        <div class="countdown-actions">
+          {{ $ctaLink := $next.RelPermalink }}
+          {{ $ctaLabel := "View Details" }}
+          {{ with $next.Params.registration_url }}
+            {{ $ctaLink = . }}
+            {{ $ctaLabel = "Register" }}
+          {{ end }}
+          {{ $isExternal := hasPrefix $ctaLink "http" }}
+          <a class="btn-secondary btn-small" href="{{ $ctaLink }}"{{ if $isExternal }} target="_blank" rel="noreferrer"{{ end }}>{{ $ctaLabel }}</a>
+        </div>
       </div>
     {{ else }}
-      <div class="upcoming-meta">
-        <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />TBA</span>
-        <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />TBA</span>
+      <div class="countdown countdown-empty">
+        <div class="time-block">
+          <span class="number">00</span>
+          <span class="label">Days</span>
+        </div>
+        <div class="time-block">
+          <span class="number">00</span>
+          <span class="label">Hours</span>
+        </div>
+        <div class="time-block">
+          <span class="number">00</span>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="time-block">
+          <span class="number">00</span>
+          <span class="label">Seconds</span>
+        </div>
       </div>
-      <div class="countdown-actions">
-        <a class="btn-secondary btn-small" href="{{ "/events" | relURL }}">View Events</a>
+      <div class="countdown-meta">
+        <div class="upcoming-meta">
+          <span>Next date TBD</span>
+        </div>
+        <div class="countdown-actions">
+          <a class="btn-secondary btn-small" href="{{ "/events" | relURL }}">View Events</a>
+        </div>
       </div>
     {{ end }}
   </div>

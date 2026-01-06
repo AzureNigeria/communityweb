@@ -9,7 +9,8 @@
 
     if (diff <= 0) {
       container.classList.add("live");
-      const badge = container.parentElement.querySelector(".live-badge");
+      const card = container.closest(".countdown-card");
+      const badge = card ? card.querySelector(".live-badge") : null;
       if (badge) badge.hidden = false;
       container.querySelectorAll(".number").forEach((el) => {
         el.textContent = "00";

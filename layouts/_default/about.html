@@ -1,0 +1,132 @@
+{{ define "main" }}
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">About Azure Nigeria Community</p>
+      <h1>We build practical Azure skills in Nigeria through community, training, and real-world delivery.</h1>
+      <p class="hero-subhead">We run meetups, study series, exam readiness programs, and conferences that help people learn, build, and advance.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="https://rebrand.ly/azurenigcommunity-meetup" target="_blank" rel="noreferrer">Join the community</a>
+        <a class="btn-secondary" href="{{ "/events" | relURL }}">See upcoming events</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Our focus</p>
+        <h2>Clear paths from learning to delivery.</h2>
+        <p class="lead">We keep programs practical, structured, and focused on outcomes.</p>
+      </div>
+      <div class="grid cards-3">
+        <div class="card">
+          <h3>Community events</h3>
+          <p class="muted">Talks and meetups that keep you current with Azure practice.</p>
+        </div>
+        <div class="card">
+          <h3>Study series</h3>
+          <p class="muted">Structured learning with a steady pace and shared accountability.</p>
+        </div>
+        <div class="card">
+          <h3>Exam readiness</h3>
+          <p class="muted">Focused prep that helps candidates pass.</p>
+        </div>
+        <div class="card">
+          <h3>Talent showcase</h3>
+          <p class="muted">We highlight projects and people to build visibility.</p>
+        </div>
+        <div class="card">
+          <h3>Practical learning</h3>
+          <p class="muted">Hands-on sessions that mirror real Azure workloads.</p>
+        </div>
+        <div class="card">
+          <h3>Accountability</h3>
+          <p class="muted">Cohort rhythm that keeps people consistent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-gradient">
+    <div class="container cert-cta">
+      <div>
+        <p class="eyebrow">Community promise</p>
+        <h2>Local, practical, and consistent.</h2>
+        <p>We focus on clear learning paths, real practice, and steady support.</p>
+      </div>
+      <div class="cert-cta-card">
+        <h3>What this looks like</h3>
+        <ul class="checklist">
+          <li>Programs shaped by Nigerian practitioners</li>
+          <li>Accessible sessions for beginners and working professionals</li>
+          <li>Clear progression from learning to certification</li>
+          <li>Respect for time and real-life constraints</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Trust</p>
+        <h2>Built on trust, driven by innovation</h2>
+        <p>We set clear expectations and keep programs focused on skill growth.</p>
+        <div class="stats-grid">
+          {{ range .Site.Data.stats.items }}
+          <div class="stat-card">
+            <p class="stat-value">{{ .value }}</p>
+            <p class="stat-label">{{ .label }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="grid cards-3">
+        <div class="card">
+          <h3>High-quality delivery</h3>
+          <p class="muted">We curate speakers and content to keep sessions useful.</p>
+        </div>
+        <div class="card">
+          <h3>Community-led</h3>
+          <p class="muted">Programs are shaped with member and partner feedback.</p>
+        </div>
+        <div class="card">
+          <h3>Responsible growth</h3>
+          <p class="muted">We scale with care so each cohort gets support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Partnerships</p>
+        <h2>Let’s build practical Azure capability together</h2>
+        <p>We work with companies, institutions, and individuals to grow cloud skills in Nigeria.</p>
+      </div>
+      <div class="exam-note-card">
+        <h3>Partnership inquiries</h3>
+        <p>
+          Reach us at
+          <a href="mailto:Partnerships@azurenigeria.org">Partnerships@azurenigeria.org</a>
+          for both corporate and individual partnerships.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container exam-cta-panel">
+      <div>
+        <p class="eyebrow">Ready to get involved?</p>
+        <h2>Join the community or support our programs as a volunteer</h2>
+        <p class="lead">Get access to live sessions and peer support, or help us deliver events, study series, and conferences.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://rebrand.ly/azurenigcommunity-meetup" target="_blank" rel="noreferrer">Join the community</a>
+        <a class="btn-secondary" href="{{ "/register-to-speak" | relURL }}">Get involved: speak or volunteer</a>
+      </div>
+    </div>
+  </section>
+{{ end }}
