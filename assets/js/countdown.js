@@ -83,7 +83,7 @@
         }
         if (navigator.clipboard && navigator.clipboard.writeText) {
           try {
-            await navigator.clipboard.writeText(shareText);
+            await navigator.clipboard.writeText(url);
             button.dataset.shareStatus = "copied";
             const original = button.innerHTML;
             button.innerHTML = "Link Copied";
@@ -96,7 +96,7 @@
             // Continue to fallback prompt.
           }
         }
-        window.prompt("Copy this:", shareText);
+        window.prompt("Copy this link:", url);
       });
     });
   };
