@@ -45,18 +45,27 @@
                 <ul class="series-session-items">
                   {{ range $upcoming }}
                     <li class="series-session-item">
-                      <div class="series-session-card">
-                        <div class="series-session-top">
-                          <div class="series-session-heading">
+                      <div class="series-session-card upcoming">
+                        <div class="series-session-header">
+                          <div class="series-session-title-block">
                             <span class="series-session-title">{{ .Title }}</span>
-                            <span class="status-badge upcoming">Upcoming</span>
                           </div>
+                          <span class="status-badge upcoming series-session-status">Upcoming</span>
                         </div>
                         <div class="series-session-meta">
-                          <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />{{ .Date.Format "Jan 02, 2006" }}</span>
-                          <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ .Date.Format "3:04 PM" }}</span>
+                          <div class="series-session-meta-item">
+                            <span class="meta-label">Date</span>
+                            <span class="meta-value">{{ .Date.Format "Jan 02, 2006" }}</span>
+                          </div>
+                          <div class="series-session-meta-item">
+                            <span class="meta-label">Time</span>
+                            <span class="meta-value">{{ .Date.Format "3:04 PM" }}</span>
+                          </div>
                           {{ with .Params.speaker }}
-                            <span><img src="{{ "images/icons/user.svg" | relURL }}" alt="Speaker icon" />{{ . }}</span>
+                            <div class="series-session-meta-item">
+                              <span class="meta-label">Speaker</span>
+                              <span class="meta-value">{{ . }}</span>
+                            </div>
                           {{ end }}
                         </div>
                         {{ with .Params.description }}
@@ -77,18 +86,27 @@
                 <ul class="series-session-items">
                   {{ range $past }}
                     <li class="series-session-item">
-                      <div class="series-session-card">
-                        <div class="series-session-top">
-                          <div class="series-session-heading">
+                      <div class="series-session-card past">
+                        <div class="series-session-header">
+                          <div class="series-session-title-block">
                             <span class="series-session-title">{{ .Title }}</span>
-                            <span class="status-badge past">Past</span>
                           </div>
+                          <span class="status-badge past series-session-status">Past</span>
                         </div>
                         <div class="series-session-meta">
-                          <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Date icon" />{{ .Date.Format "Jan 02, 2006" }}</span>
-                          <span><img src="{{ "images/icons/clock.svg" | relURL }}" alt="Time icon" />{{ .Date.Format "3:04 PM" }}</span>
+                          <div class="series-session-meta-item">
+                            <span class="meta-label">Date</span>
+                            <span class="meta-value">{{ .Date.Format "Jan 02, 2006" }}</span>
+                          </div>
+                          <div class="series-session-meta-item">
+                            <span class="meta-label">Time</span>
+                            <span class="meta-value">{{ .Date.Format "3:04 PM" }}</span>
+                          </div>
                           {{ with .Params.speaker }}
-                            <span><img src="{{ "images/icons/user.svg" | relURL }}" alt="Speaker icon" />{{ . }}</span>
+                            <div class="series-session-meta-item">
+                              <span class="meta-label">Speaker</span>
+                              <span class="meta-value">{{ . }}</span>
+                            </div>
                           {{ end }}
                         </div>
                         {{ with .Params.description }}
