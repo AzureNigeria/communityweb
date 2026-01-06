@@ -464,7 +464,11 @@ p {
   padding: 1.5rem;
   border-radius: 28px;
   border: 1px solid rgba(10, 37, 64, 0.12);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(243, 249, 248, 0.95));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(243, 249, 248, 0.95)
+  );
   box-shadow: 0 24px 48px rgba(6, 24, 41, 0.12);
   position: relative;
   overflow: hidden;
@@ -688,8 +692,14 @@ p {
   border-radius: 24px;
   border: 2px solid transparent;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(236, 247, 246, 0.9)) padding-box,
-    linear-gradient(120deg, rgba(0, 217, 255, 0.7), rgba(0, 255, 179, 0.65), rgba(10, 37, 64, 0.4))
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(236, 247, 246, 0.9))
+      padding-box,
+    linear-gradient(
+        120deg,
+        rgba(0, 217, 255, 0.7),
+        rgba(0, 255, 179, 0.65),
+        rgba(10, 37, 64, 0.4)
+      )
       border-box;
   box-shadow: 0 24px 40px rgba(6, 24, 41, 0.12);
   position: relative;
