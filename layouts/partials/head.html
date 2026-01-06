@@ -8,7 +8,7 @@
   {{ $pageDescription = .Summary }}
 {{ end }}
 {{ $pageDescription = $pageDescription | plainify | truncate 160 }}
-{{ $ogImage := "images/hero-bg.svg" | absURL }}
+{{ $ogImage := "images/azure-nigeria.png" | absURL }}
 {{ with .Params.featured_image }}
   {{ $ogImage = . | absURL }}
 {{ end }}
@@ -28,4 +28,10 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:image" content="{{ $ogImage }}" />
+<meta property="og:image:alt" content="{{ $pageTitle }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $pageTitle }}" />
+<meta name="twitter:description" content="{{ $pageDescription }}" />
+<meta name="twitter:image" content="{{ $ogImage }}" />
 <link rel="icon" href="{{ "/favicon.png" | relURL }}" type="image/png" />

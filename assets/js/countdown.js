@@ -68,11 +68,14 @@
   const bindShareButtons = () => {
     document.querySelectorAll("[data-share]").forEach((button) => {
       const title = button.getAttribute("data-share-title") || document.title;
+      const text = button.getAttribute("data-share-text") || "";
       const url = button.getAttribute("data-share-url") || window.location.href;
+      const shareText = text ? `${title}\n${text}\n${url}` : `${title}\n${url}`;
       button.addEventListener("click", async () => {
         if (navigator.share) {
           try {
-            await navigator.share({ title, url });
+            const payload = text ? { title, text, url } : { title, url };
+            await navigator.share(payload);
           } catch (error) {
             // User cancelled or share failed; no action needed.
           }
@@ -80,7 +83,7 @@
         }
         if (navigator.clipboard && navigator.clipboard.writeText) {
           try {
-            await navigator.clipboard.writeText(url);
+            await navigator.clipboard.writeText(shareText);
             button.dataset.shareStatus = "copied";
             const original = button.innerHTML;
             button.innerHTML = "Link Copied";
@@ -93,7 +96,7 @@
             // Continue to fallback prompt.
           }
         }
-        window.prompt("Copy this link:", url);
+        window.prompt("Copy this:", shareText);
       });
     });
   };
