@@ -17,10 +17,10 @@ Site runs at `http://localhost:1313`.
 
 - `config.yaml` - Site config, menu, homepage toggles
 - `assets/css/style.css` - Main stylesheet (Hugo Pipes minifies)
-- `assets/js/countdown.js` - Countdown and tab UI logic
+- `assets/js/countdown.js` - Countdown + tab UI logic (hero live session timer)
 - `content/` - Pages, events, series, blog content
 - `data/` - Community stats and social links
-- `layouts/` - Hugo templates and partials
+- `layouts/` - Hugo templates and partials (hero + live session card)
 - `static/` - Images and Decap CMS admin
 - `public/` - Build output (do not edit by hand)
 

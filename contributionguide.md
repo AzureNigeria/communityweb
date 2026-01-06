@@ -6,7 +6,7 @@ This guide explains what each part of the project holds and how to edit or add c
 
 - `config.yaml` - Site-wide config: base URL, menu, homepage section toggles, and form/newsletter URLs.
 - `assets/css/style.css` - Main stylesheet; Hugo pipes minifies on build.
-- `assets/js/countdown.js` - Countdown + tab UI logic; bundled via Hugo pipes.
+- `assets/js/countdown.js` - Countdown + tab UI logic (hero live session timer); bundled via Hugo pipes.
 - `content/` - All pages and section content in Markdown.
 - `data/` - Structured data used in templates (stats and social links).
 - `layouts/` - Hugo templates and partials that render pages.
@@ -45,7 +45,8 @@ This guide explains what each part of the project holds and how to edit or add c
 - `layouts/events/list.html` and `layouts/events/single.html` - Events list and detail pages.
 - `layouts/series/list.html` and `layouts/series/single.html` - Series list and detail pages.
 - `layouts/blog/list.html` and `layouts/blog/single.html` - Blog list and detail pages.
-- `layouts/partials/` - Reusable sections (hero, about, cards, footer, etc.).
+- `layouts/partials/countdown-timer.html` - Upcoming live session card + countdown markup.
+- `layouts/partials/` - Reusable sections (hero, upcoming live session, about, cards, footer, etc.).
 
 ### Assets and Static
 
@@ -60,6 +61,7 @@ This guide explains what each part of the project holds and how to edit or add c
    - Update a blog post in `content/blog/*.md`.
 1. Update site-wide sections or layout text in `layouts/partials/`.
    - Hero headline/lead text: `layouts/partials/hero.html`
+   - Upcoming live session countdown card: `layouts/partials/countdown-timer.html`
    - About section copy: `layouts/partials/about-community.html`
 1. Update stats and social links in `data/`.
 1. Update images in `static/images/` and reference them with `/images/...` in front matter.
