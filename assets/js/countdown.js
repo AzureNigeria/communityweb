@@ -228,6 +228,31 @@
         }
         form.dataset.submitting = "true";
         const payload = new FormData(form);
+        const isKitForm = /app\.(kit|convertkit)\.com\/forms\//.test(action);
+        if (isKitForm) {
+          let target = form.dataset.kitTarget;
+          if (!target) {
+            target = `kit-subscribe-${Math.random().toString(36).slice(2)}`;
+            const iframe = document.createElement("iframe");
+            iframe.name = target;
+            iframe.title = "Kit subscribe target";
+            iframe.hidden = true;
+            iframe.style.position = "absolute";
+            iframe.style.left = "-9999px";
+            iframe.style.width = "1px";
+            iframe.style.height = "1px";
+            document.body.appendChild(iframe);
+            form.setAttribute("target", target);
+            form.dataset.kitTarget = target;
+          }
+          form.submit();
+          if (message) {
+            message.hidden = false;
+          }
+          form.reset();
+          form.dataset.submitting = "false";
+          return;
+        }
         fetch(action, {
           method: "POST",
           body: payload,

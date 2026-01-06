@@ -6,10 +6,10 @@ publishDate: 2025-01-20T00:00:00+01:00
 end_date: 2026-01-31T12:00:00+01:00
 location: "Virtual"
 speaker: "Olu Olofinyo"
-speaker_title: "Azure Security Lead"
+speaker_title: "Azure Community Lead"
 speaker_company: "Azure Nigeria Community"
 speaker_image: "/images/team/team.svg"
-speaker_bio: "Olu Olofinyo leads security-focused Azure enablement and mentoring for community builders."
+speaker_bio: "Olu Olofinyo leads security-focused Cloud enablement and mentoring for community builders."
 registration_url: "https://rebrand.ly/azurenigcommunity-meetup"
 featured_image: "/images/series/security-leadership.svg"
 description: "Zero trust principles and security posture planning for Azure environments."

@@ -11,7 +11,7 @@ params:
   newsletter:
     enabled: true
     provider: "convertkit"
-    form_id: "a79ad2d967"
+    form_id: "8921765"
     email_field: "email"
     name_field: "name"
     action: "/subscribe"
