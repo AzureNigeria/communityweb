@@ -10,7 +10,10 @@
 {{ $pageDescription = $pageDescription | plainify | truncate 160 }}
 {{ $ogImage := "images/azure-nigeria.png" | absURL }}
 {{ with .Params.featured_image }}
-  {{ $ogImage = . | absURL }}
+  {{ $candidate := . | absURL }}
+  {{ if not (hasSuffix (lower $candidate) ".svg") }}
+    {{ $ogImage = $candidate }}
+  {{ end }}
 {{ end }}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
