@@ -55,7 +55,7 @@
         <h4>Share</h4>
         {{ $shareText := .Params.description | default (.Summary | plainify) | default .Site.Params.description | plainify | truncate 160 }}
         <button class="btn-secondary share-btn" type="button" data-share data-share-title="{{ .Title }}" data-share-text="{{ $shareText }}" data-share-url="{{ .Permalink }}">
-          <img src="{{ "images/icons/share.svg" | relURL }}" alt="" />Share Event
+          <img src="{{ "images/icons/share.svg" | relURL }}" alt="Share icon" />Share Event
         </button>
         </div>
         {{ $start := .Date.Format "20060102T150405Z" }}
@@ -94,4 +94,5 @@
       </div>
     </div>
   </section>
+  {{ partial "explore-more.html" . }}
 {{ end }}

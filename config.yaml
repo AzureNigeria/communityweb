@@ -1,4 +1,4 @@
-baseURL: "https://azurenigeriaweb.pages.dev"
+baseURL: "https://azurenigeria.org"
 languageCode: "en"
 title: "Azure Nigeria Community"
 disableLiveReload: true
@@ -64,6 +64,11 @@ markup:
     style: "monokai"
 
 outputs:
-  home: ["HTML", "RSS"]
+  home: ["HTML", "RSS", "SITEMAP"]
   page: ["HTML"]
   section: ["HTML", "RSS"]
+
+sitemap:
+  changefreq: "weekly"
+  priority: 0.5
+  filename: "sitemap.xml"

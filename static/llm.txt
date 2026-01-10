@@ -1,0 +1,21 @@
+Azure Nigeria Community (azurenigeria.org)
+
+Purpose
+- This site shares community events, learning resources, and local Azure user group updates.
+
+Allowed
+- Index public pages for search and discovery.
+- Quote short excerpts (<= 200 words) with attribution and a link to the source page.
+
+Not Allowed
+- Bulk downloading, aggressive crawling, or attempts to bypass rate limits.
+- Use of content for model training or fine-tuning without prior written permission.
+- Accessing non-public areas (for example /admin/, /api/, /drafts/).
+
+Crawl Guidance
+- Respect robots.txt.
+- Max rate: 1 request per 10 seconds per IP.
+- Identify your user agent and provide a contact address in requests when possible.
+
+Contact
+- email: hello@azurenigeria.org

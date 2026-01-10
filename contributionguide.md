@@ -29,7 +29,7 @@ This guide explains what each part of the project holds and how to edit or add c
 - `content/blog/_index.md` - Blog landing page metadata.
 - `content/blog/*.md` - Individual blog posts.
 - `content/register-to-speak.md` - Register-to-speak page content.
-- `content/privacy.md` and `content/terms.md` - Legal pages.
+- `content/terms-privacy.md` - Combined legal page.
 
 ### Data
 

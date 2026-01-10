@@ -70,7 +70,6 @@
       const title = button.getAttribute("data-share-title") || document.title;
       const text = button.getAttribute("data-share-text") || "";
       const url = button.getAttribute("data-share-url") || window.location.href;
-      const shareText = text ? `${title}\n${text}\n${url}` : `${title}\n${url}`;
       button.addEventListener("click", async () => {
         if (navigator.share) {
           try {
@@ -222,8 +221,8 @@
           }
           return;
         }
-        const action = form.getAttribute("action");
-        if (!action) {
+        const submitUrl = form.dataset.submitUrl || form.getAttribute("action");
+        if (!submitUrl) {
           return;
         }
         if (form.dataset.submitting === "true") {
@@ -231,7 +230,7 @@
         }
         form.dataset.submitting = "true";
         const payload = new FormData(form);
-        const isKitForm = /app\.(kit|convertkit)\.com\/forms\//.test(action);
+        const isKitForm = /app\.(kit|convertkit)\.com\/forms\//.test(submitUrl);
         if (isKitForm) {
           let target = form.dataset.kitTarget;
           if (!target) {
@@ -248,7 +247,14 @@
             form.setAttribute("target", target);
             form.dataset.kitTarget = target;
           }
+          const originalAction = form.getAttribute("action");
+          form.setAttribute("action", submitUrl);
           form.submit();
+          if (originalAction) {
+            form.setAttribute("action", originalAction);
+          } else {
+            form.removeAttribute("action");
+          }
           if (message) {
             message.hidden = false;
           }
@@ -256,7 +262,7 @@
           form.dataset.submitting = "false";
           return;
         }
-        fetch(action, {
+        fetch(submitUrl, {
           method: "POST",
           body: payload,
           mode: "cors",
@@ -275,6 +281,7 @@
           })
           .catch(() => {
             form.dataset.submitting = "false";
+            form.setAttribute("action", submitUrl);
             form.submit();
           })
           .finally(() => {

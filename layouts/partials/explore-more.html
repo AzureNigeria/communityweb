@@ -1,0 +1,51 @@
+{{ $currentSection := .Section }}
+{{ $showEvents := ne $currentSection "events" }}
+{{ $showSeries := ne $currentSection "series" }}
+{{ $showBlog := ne $currentSection "blog" }}
+{{ $events := first 3 (sort (where .Site.RegularPages "Section" "events") "Date" "desc") }}
+{{ $series := first 3 (sort (where .Site.RegularPages "Section" "series") "Date" "desc") }}
+{{ $blog := first 3 (sort (where .Site.RegularPages "Section" "blog") "Date" "desc") }}
+
+<section class="section section-light">
+  <div class="container">
+    <h2>Explore More</h2>
+    <div class="grid cards-3">
+      {{ if $showEvents }}
+        <div class="card">
+          <div class="card-body">
+            <h3>Events</h3>
+            <p class="muted">Hands-on sessions and community meetups.</p>
+            {{ range $events }}
+              <a class="text-link" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+            {{ end }}
+            <a class="text-link" href="{{ "/events" | relURL }}">All events →</a>
+          </div>
+        </div>
+      {{ end }}
+      {{ if $showSeries }}
+        <div class="card">
+          <div class="card-body">
+            <h3>Study Series</h3>
+            <p class="muted">Structured tracks to deepen Azure skills.</p>
+            {{ range $series }}
+              <a class="text-link" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+            {{ end }}
+            <a class="text-link" href="{{ "/series" | relURL }}">All series →</a>
+          </div>
+        </div>
+      {{ end }}
+      {{ if $showBlog }}
+        <div class="card">
+          <div class="card-body">
+            <h3>Community Blog</h3>
+            <p class="muted">Guides, stories, and event recaps.</p>
+            {{ range $blog }}
+              <a class="text-link" href="{{ .RelPermalink }}">{{ .Title }} →</a>
+            {{ end }}
+            <a class="text-link" href="{{ "/blog" | relURL }}">All blog posts →</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

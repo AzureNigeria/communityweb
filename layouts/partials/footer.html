@@ -1,29 +1,52 @@
 <footer class="site-footer">
+  <div class="container footer-cta">
+    <div class="footer-cta-card">
+      <div class="footer-cta-copy">
+        <p class="eyebrow">Stay in the loop</p>
+        <h3>Monthly updates from Azure Nigeria</h3>
+        <p class="muted small">Monthly digest on events, study sessions, and community wins.</p>
+      </div>
+      {{ if .Site.Params.newsletter.enabled }}
+        <div class="footer-cta-form footer-subscribe-form">
+          {{ partial "newsletter-form.html" (dict "context" . "form_class" "newsletter-form footer-form" "success_text" "Subscribed. Look out for the next update.") }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
   <div class="container footer-grid">
-    <div class="footer-brand">
-      <img src="{{ "images/azure-nigeria.png" | relURL }}" alt="Azure Nigeria Community logo" loading="lazy" decoding="async" />
+    <div class="footer-contact">
+      <p class="eyebrow">Contact</p>
+      <a class="footer-email" href="mailto:hello@azurenigeria.org">hello@azurenigeria.org</a>
+      <p class="muted small">Questions, partnerships, or feedback.</p>
+    </div>
+    <div class="footer-logo">
+      <img src="{{ "favicon.png" | relURL }}" alt="Azure Nigeria Community logo" loading="lazy" decoding="async" />
+    </div>
+    <div class="footer-brand-copy">
       <p>Azure Nigeria Community is a network of developers, cloud enthusiasts, and tech professionals passionate about Microsoft Azure. We build, nurture, and showcase Nigerian cloud talent through hands-on practice.</p>
     </div>
-    <div>
-      <h4>Quick Links</h4>
+    <div class="footer-nav footer-nav-programs">
+      <h4>Programs</h4>
       <ul>
         <li><a href="{{ "/events" | relURL }}">Events</a></li>
         <li><a href="{{ "/series" | relURL }}">Study Series</a></li>
-        <li><a href="{{ "/blog" | relURL }}">Blog</a></li>
-        <li><a href="https://rebrand.ly/azurenigcommunity-meetup" target="_blank" rel="noreferrer">Join Community</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Community</h4>
-      <ul>
-        <li><a href="{{ "/about" | relURL }}">About</a></li>
-        <li><a href="mailto:hello@azurenigeria.community">Contact</a></li>
         <li><a href="{{ "/free-voucher" | relURL }}">Free Voucher Program</a></li>
-        <li><a href="https://developer.microsoft.com/" target="_blank" rel="noreferrer">Developer Programs</a></li>
+        <li><a href="https://developer.microsoft.com/en-us/" target="_blank" rel="noreferrer">Developer Programs</a></li>
       </ul>
     </div>
-    <div>
-      <h4>Social & Newsletter</h4>
+    <div class="footer-nav footer-nav-involved">
+      <h4>Get Involved</h4>
+      <ul>
+        <li><a href="{{ "/blog" | relURL }}">Blog</a></li>
+        <li><a href="{{ "/about" | relURL }}">About Us</a></li>
+        <li><a href="https://rebrand.ly/azurenigcommunity-meetup" target="_blank" rel="noreferrer">Join Community</a></li>
+        <li><a href="{{ "/register-to-speak" | relURL }}">Speak or Volunteer</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter footer-nav-connect">
+      <h4>Connect</h4>
+      <p class="muted small">Follow for updates, events, and community wins.</p>
       <div class="footer-social">
         {{ range $key, $val := .Site.Data.social }}
           <a href="{{ $val.url }}" target="_blank" rel="noreferrer" aria-label="{{ $val.name }}">
@@ -32,44 +55,12 @@
           </a>
         {{ end }}
       </div>
-      {{ if .Site.Params.newsletter.enabled }}
-        {{ $action := .Site.Params.newsletter.action }}
-        {{ $emailField := "email" }}
-        {{ $nameField := "name" }}
-        {{ $provider := "" }}
-        {{ $formId := "" }}
-        {{ with .Site.Params.newsletter.provider }}
-          {{ $provider = . }}
-        {{ end }}
-        {{ with .Site.Params.newsletter.form_id }}
-          {{ $formId = . }}
-        {{ end }}
-        {{ with .Site.Params.newsletter.email_field }}
-          {{ $emailField = . }}
-        {{ end }}
-        {{ with .Site.Params.newsletter.name_field }}
-          {{ $nameField = . }}
-        {{ end }}
-        {{ if and (eq $provider "convertkit") (ne $formId "") }}
-          {{ $action = printf "https://app.kit.com/forms/%s/subscriptions" $formId }}
-          {{ $emailField = "email_address" }}
-        {{ end }}
-        <form class="newsletter-form footer-form" action="{{ $action }}" method="post" novalidate>
-          <div class="form-field">
-            <input type="email" name="{{ $emailField }}" placeholder="Enter your email" required aria-label="Email address" data-newsletter-email />
-            <small class="form-error" data-error-for="email" role="status" aria-live="polite" hidden>Enter a valid email address.</small>
-          </div>
-          <button type="submit" class="btn-primary">Subscribe</button>
-        </form>
-        <div class="form-success" role="status" aria-live="polite" hidden>Subscribed. Look out for the next update.</div>
-      {{ end }}
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="container footer-bottom">
     <p>© {{ now.Format "2006" }} Azure Nigeria Community. All rights reserved.</p>
     <div>
-      <a href="{{ "/privacy" | relURL }}">Privacy</a>
-      <a href="{{ "/terms" | relURL }}">Terms</a>
+      <a href="{{ "/terms-privacy" | relURL }}">Terms and Privacy</a>
     </div>
   </div>
 </footer>

@@ -1,0 +1,40 @@
+{{ define "main" }}
+  <section class="page-hero tint">
+    <div class="container">
+      <p class="breadcrumb"><a href="{{ "/" | relURL }}">Home</a> / 404</p>
+      <h1>Page Not Found</h1>
+      <p class="lead">We couldn't find that page. Explore upcoming events, study series, or the community blog.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="{{ "/" | relURL }}">Back to Home</a>
+        <a class="btn-secondary" href="{{ "/events" | relURL }}">View Events</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid cards-3">
+        <div class="card">
+          <div class="card-body">
+            <h3>Study Series</h3>
+            <p class="muted">Follow structured learning tracks and deep dives.</p>
+            <a class="text-link" href="{{ "/series" | relURL }}">Browse series →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Community Blog</h3>
+            <p class="muted">Highlights, guides, and stories from the community.</p>
+            <a class="text-link" href="{{ "/blog" | relURL }}">Read the blog →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3>Join the Community</h3>
+            <p class="muted">Get event updates and community news.</p>
+            <a class="text-link" href="{{ "/register-to-speak" | relURL }}">Get involved →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

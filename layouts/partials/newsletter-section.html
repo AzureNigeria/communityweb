@@ -5,39 +5,6 @@
       <p>Get updates on events, and opportunities from our community.</p>
       <small class="form-note">No spam. Unsubscribe anytime.</small>
     </div>
-    {{ $action := .Site.Params.newsletter.action }}
-    {{ $emailField := "email" }}
-    {{ $nameField := "name" }}
-    {{ $provider := "" }}
-    {{ $formId := "" }}
-    {{ with .Site.Params.newsletter.provider }}
-      {{ $provider = . }}
-    {{ end }}
-    {{ with .Site.Params.newsletter.form_id }}
-      {{ $formId = . }}
-    {{ end }}
-    {{ with .Site.Params.newsletter.email_field }}
-      {{ $emailField = . }}
-    {{ end }}
-    {{ with .Site.Params.newsletter.name_field }}
-      {{ $nameField = . }}
-    {{ end }}
-    {{ if and (eq $provider "convertkit") (ne $formId "") }}
-      {{ $action = printf "https://app.kit.com/forms/%s/subscriptions" $formId }}
-      {{ $emailField = "email_address" }}
-      {{ $nameField = "first_name" }}
-    {{ end }}
-    <form class="newsletter-form" action="{{ $action }}" method="post" novalidate>
-      <div class="form-field">
-        <input type="text" name="{{ $nameField }}" placeholder="Preferred name" required aria-label="Preferred name" data-newsletter-name />
-        <small class="form-error" data-error-for="name" role="status" aria-live="polite" hidden>Enter your name.</small>
-      </div>
-      <div class="form-field">
-        <input type="email" name="{{ $emailField }}" placeholder="Enter your email" required aria-label="Email address" data-newsletter-email />
-        <small class="form-error" data-error-for="email" role="status" aria-live="polite" hidden>Enter a valid email address.</small>
-      </div>
-      <button type="submit" class="btn-primary">Subscribe</button>
-    </form>
-    <div class="form-success" role="status" aria-live="polite" hidden>Thanks for subscribing. Check your inbox for the next update.</div>
+    {{ partial "newsletter-form.html" (dict "context" . "form_class" "newsletter-form" "success_text" "Thanks for subscribing. Check your inbox for the next update.") }}
   </div>
 </section>

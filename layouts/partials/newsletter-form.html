@@ -1,0 +1,30 @@
+{{- $context := .context -}}
+{{- $formClass := .form_class | default "newsletter-form" -}}
+{{- $successText := .success_text | default "Thanks for subscribing." -}}
+{{- $successClass := .success_class | default "form-success" -}}
+{{- $visibleAction := $context.Site.Params.newsletter.action | default "/subscribe" -}}
+{{- $submitUrl := $visibleAction -}}
+{{- $emailField := $context.Site.Params.newsletter.email_field | default "email" -}}
+{{- $nameField := $context.Site.Params.newsletter.name_field | default "name" -}}
+{{- $provider := $context.Site.Params.newsletter.provider | default "" -}}
+{{- $formId := $context.Site.Params.newsletter.form_id | default "" -}}
+{{- if and (eq $provider "convertkit") (ne $formId "") -}}
+  {{- $submitUrl = printf "https://app.kit.com/forms/%s/subscriptions" $formId -}}
+  {{- $emailField = "email_address" -}}
+  {{- $nameField = "first_name" -}}
+  {{- if hasPrefix $visibleAction "http" -}}
+    {{- $visibleAction = "/subscribe" -}}
+  {{- end -}}
+{{- end -}}
+<form class="{{ $formClass }}" action="{{ $visibleAction }}" data-submit-url="{{ $submitUrl }}" method="post" novalidate>
+  <div class="form-field">
+    <input type="text" name="{{ $nameField }}" placeholder="Preferred name" required aria-label="Preferred name" data-newsletter-name autocomplete="name" />
+    <small class="form-error" data-error-for="name" role="status" aria-live="polite" hidden>Enter your name.</small>
+  </div>
+  <div class="form-field">
+    <input type="email" name="{{ $emailField }}" placeholder="Enter your email" required aria-label="Email address" data-newsletter-email autocomplete="email" />
+    <small class="form-error" data-error-for="email" role="status" aria-live="polite" hidden>Enter a valid email address.</small>
+  </div>
+  <button type="submit" class="btn-primary">Subscribe</button>
+</form>
+<div class="{{ $successClass }}" role="status" aria-live="polite" hidden>{{ $successText }}</div>

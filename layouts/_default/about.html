@@ -1,47 +1,66 @@
 {{ define "main" }}
-  <section class="hero">
+  <section class="hero about-hero">
     <div class="container">
-      <div class="hero-content">
-        <p class="eyebrow">About Azure Nigeria Community</p>
-        <h1>Building Azure skills in Nigeria.</h1>
-        <p class="hero-subhead">Community-led learning, practical sessions, and career-ready programs.</p>
-        <div class="hero-actions">
-          <a class="btn-primary" href="https://rebrand.ly/azurenigcommunity-meetup" target="_blank" rel="noreferrer">Join the community</a>
-          <a class="btn-secondary" href="{{ "/events" | relURL }}">See upcoming events</a>
+      <div class="about-hero-grid">
+        <div class="about-hero-panel">
+          <p class="eyebrow">About Azure Nigeria Community</p>
+          <h1>Building Azure talent from Nigeria, for real-world delivery.</h1>
+          <p class="hero-subhead about-hero-subhead">Community-led learning, practical labs, and programs that respect your time.</p>
+          <ul class="hero-highlights about-hero-highlights">
+            <li>Hands-on labs</li>
+            <li>Career-ready tracks</li>
+            <li>Speaker mentorship</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn-primary" href="{{ "/events" | relURL }}">See events</a>
+            <a class="btn-secondary" href="{{ "/series" | relURL }}">Study series</a>
+          </div>
+          <p class="muted small about-hero-note">Speaking or volunteering? Use the dedicated form so we can respond faster.</p>
+        </div>
+        <div class="about-hero-stats">
+          <p class="eyebrow">Community snapshot</p>
+          <div class="about-stat-grid">
+            {{ range .Site.Data.stats.items }}
+            <div class="about-stat-card">
+              <p class="about-stat-value">{{ .value }}</p>
+              <p class="about-stat-label">{{ .label }}</p>
+            </div>
+            {{ end }}
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container">
-      <div class="section-heading">
+  <section class="section section-light about-focus">
+    <div class="container about-focus-grid">
+      <div class="about-focus-intro">
         <p class="eyebrow">Our focus</p>
         <h2>Clear paths from learning to delivery.</h2>
         <p class="lead">We keep programs practical, structured, and focused on outcomes.</p>
       </div>
-      <div class="grid cards-3">
-        <div class="card">
+      <div class="about-focus-list">
+        <div class="about-focus-item">
           <h3>Community events</h3>
           <p class="muted">Talks and meetups that keep you current with Azure practice.</p>
         </div>
-        <div class="card">
+        <div class="about-focus-item">
           <h3>Study series</h3>
           <p class="muted">Structured learning with a steady pace and shared accountability.</p>
         </div>
-        <div class="card">
+        <div class="about-focus-item">
           <h3>Exam readiness</h3>
           <p class="muted">Focused prep that helps candidates pass.</p>
         </div>
-        <div class="card">
+        <div class="about-focus-item">
           <h3>Talent showcase</h3>
           <p class="muted">We highlight projects and people to build visibility.</p>
         </div>
-        <div class="card">
+        <div class="about-focus-item">
           <h3>Practical learning</h3>
           <p class="muted">Hands-on sessions that mirror real Azure workloads.</p>
         </div>
-        <div class="card">
+        <div class="about-focus-item">
           <h3>Accountability</h3>
           <p class="muted">Cohort rhythm that keeps people consistent.</p>
         </div>
@@ -49,14 +68,14 @@
     </div>
   </section>
 
-  <section class="section section-gradient">
-    <div class="container cert-cta">
-      <div>
+  <section class="section section-gradient about-promise">
+    <div class="container about-promise-grid">
+      <div class="about-promise-card">
         <p class="eyebrow">Community promise</p>
         <h2>Local, practical, and consistent.</h2>
         <p>We focus on clear learning paths, real practice, and steady support.</p>
       </div>
-      <div class="cert-cta-card">
+      <div class="about-promise-details">
         <h3>What this looks like</h3>
         <ul class="checklist">
           <li>Programs shaped by Nigerian practitioners</li>
@@ -68,50 +87,47 @@
     </div>
   </section>
 
-  <section class="section section-light">
-    <div class="container split">
-      <div>
+  <section class="section section-light about-trust">
+    <div class="container about-trust-grid">
+      <div class="about-trust-panel">
         <p class="eyebrow">Trust</p>
         <h2>Built on trust, driven by innovation</h2>
         <p>We set clear expectations and keep programs focused on skill growth.</p>
-        <div class="stats-grid">
-          {{ range .Site.Data.stats.items }}
-          <div class="stat-card">
-            <p class="stat-value">{{ .value }}</p>
-            <p class="stat-label">{{ .label }}</p>
-          </div>
-          {{ end }}
+        <div class="hero-badges about-trust-badges">
+          <span class="badge">Transparent roadmaps</span>
+          <span class="badge">Peer-reviewed sessions</span>
+          <span class="badge">Outcome-focused tracks</span>
         </div>
       </div>
-      <div class="grid cards-3">
-        <div class="card">
+      <div class="about-trust-cards">
+        <div class="about-trust-item">
           <h3>High-quality delivery</h3>
-          <p class="muted">We curate speakers and content to keep sessions useful.</p>
+          <p class="muted">Curated speakers keep every session useful.</p>
         </div>
-        <div class="card">
+        <div class="about-trust-item">
           <h3>Community-led</h3>
-          <p class="muted">Programs are shaped with member and partner feedback.</p>
+          <p class="muted">Member and partner feedback shapes every program.</p>
         </div>
-        <div class="card">
+        <div class="about-trust-item">
           <h3>Responsible growth</h3>
-          <p class="muted">We scale with care so each cohort gets support.</p>
+          <p class="muted">We scale carefully so each cohort stays supported.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
-    <div class="container split">
+  <section class="section section-alt about-partnership">
+    <div class="container about-partnership-grid">
       <div>
         <p class="eyebrow">Partnerships</p>
         <h2>Let’s build practical Azure capability together</h2>
         <p>We work with companies, institutions, and individuals to grow cloud skills in Nigeria.</p>
       </div>
-      <div class="exam-note-card">
+      <div class="about-partnership-card">
         <h3>Partnership inquiries</h3>
         <p>
           Reach us at
-          <a href="mailto:Partnerships@azurenigeria.org">Partnerships@azurenigeria.org</a>
+          <strong><a href="mailto:hello@azurenigeria.org">hello@azurenigeria.org</a></strong>
           for both corporate and individual partnerships.
         </p>
       </div>
@@ -119,10 +135,10 @@
   </section>
 
   <section class="section section-tint">
-    <div class="container exam-cta-panel">
+    <div class="container about-cta-panel">
       <div>
         <p class="eyebrow">Ready to get involved?</p>
-        <h2>Join the community or support our programs as a volunteer</h2>
+        <h2>Join the community or volunteer to support our programs</h2>
         <p class="lead">Get access to live sessions and peer support, or help us deliver events, study series, and conferences.</p>
       </div>
       <div class="cta-row">

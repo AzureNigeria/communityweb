@@ -12,7 +12,7 @@
       {{ if gt (len $featured) 0 }}
         {{ range $featured }}
           <article class="featured-post">
-            <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" />
+            <img src="{{ .Params.featured_image | relURL }}" alt="{{ .Title }}" loading="lazy" decoding="async" />
             <div>
               <span class="badge">Featured</span>
               <h2>{{ .Title }}</h2>
@@ -29,4 +29,5 @@
       </div>
     </div>
   </section>
+  {{ partial "explore-more.html" . }}
 {{ end }}
