@@ -1,11 +1,11 @@
 meetup:
   name: "Meetup"
-  url: "https://www.meetup.com/nigeria-microsoft-azure-meetup-group/"
+  url: "https://www.meetup.com/azurenigeria"
   icon: "meetup"
 
 linkedin:
   name: "LinkedIn"
-  url: "https://rebrand.ly/azurenigcommunity-linkedin"
+  url: "https://www.linkedin.com/company/azurenigeria"
   icon: "linkedin"
 
 youtube:

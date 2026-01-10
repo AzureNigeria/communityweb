@@ -10,7 +10,7 @@ speaker_title: "Azure Community Lead"
 speaker_company: "Azure Nigeria Community"
 speaker_image: "/images/team/team.svg"
 speaker_bio: "Olu Olofinyo leads security-focused Cloud enablement and mentoring for community builders."
-registration_url: "https://rebrand.ly/azurenigcommunity-meetup"
+registration_url: "https://www.meetup.com/azurenigeria"
 featured_image: "/images/series/security-leadership.svg"
 description: "Zero trust principles and security posture planning for Azure environments."
 tags: ["Security", "Zero Trust", "Azure"]

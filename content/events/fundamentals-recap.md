@@ -10,7 +10,7 @@ speaker_image: "/images/speakers/kemi.svg"
 speaker_bio: "Kemi helps teams launch scalable Azure infrastructure and is a longtime Azure Nigeria mentor."
 event_type: "workshop"
 status: "past"
-registration_url: "https://meetup.com/azure-nigeria/events/azure-fundamentals"
+registration_url: "https://www.meetup.com/azurenigeria"
 featured_image: "/images/events/azure-fundamentals.svg"
 tags: ["Azure Fundamentals", "AZ-900", "Cloud Basics"]
 description: "A recap of our introductory workshop covering core Azure services and exam strategy."

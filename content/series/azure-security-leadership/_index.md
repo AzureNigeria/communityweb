@@ -11,7 +11,7 @@ next_session_date: 2026-01-31T11:00:00+01:00
 instructor: "Olu Olofinyo"
 instructor_image: "/images/team/team.svg"
 youtube_playlist: "https://www.youtube.com/@nigeriaazurecommunity1704"
-linkedin_discussion: "https://rebrand.ly/azurenigcommunity-linkedin"
+linkedin_discussion: "https://www.linkedin.com/company/azurenigeria"
 thumbnail: "/images/series/security-leadership.svg"
 color: "navy"
 description: "A six-part Saturday series focused on secure cloud leadership, governance, and modern Azure defense practices."

@@ -53,7 +53,7 @@ menu:
       url: "/blog"
       weight: 5
     - name: "Join Community"
-      url: "https://rebrand.ly/azurenigcommunity-meetup"
+      url: "https://www.meetup.com/azurenigeria"
       weight: 6
 
 markup:

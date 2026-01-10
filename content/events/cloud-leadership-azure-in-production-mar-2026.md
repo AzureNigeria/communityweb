@@ -11,7 +11,7 @@ speaker_image: "/images/team/team.svg"
 speaker_bio: "Community hosts leading practical discussions on real-world Azure delivery."
 event_type: "webinar"
 status: "upcoming"
-registration_url: "https://rebrand.ly/azurenigcommunity-meetup"
+registration_url: "https://www.meetup.com/azurenigeria"
 featured_image: "/images/events/security-leadership.svg"
 tags: ["Cloud Leadership", "Production", "Azure"]
 description: "Cloud Leadership Series session on Azure in Production featuring Azure engineers sharing real-world production use cases."

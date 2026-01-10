@@ -10,7 +10,7 @@ speaker_title: "Azure Security Lead"
 speaker_company: "Azure Nigeria Community"
 speaker_image: "/images/team/team.svg"
 speaker_bio: "Olu Olofinyo leads security-focused Azure enablement and mentoring for community builders."
-registration_url: "https://rebrand.ly/azurenigcommunity-meetup"
+registration_url: "https://www.meetup.com/azurenigeria"
 featured_image: "/images/series/security-leadership.svg"
 description: "Protect infrastructure and data with segmentation, encryption, and resilience planning."
 tags: ["Infrastructure", "Data Protection", "Azure"]
