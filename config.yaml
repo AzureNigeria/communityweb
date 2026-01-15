@@ -20,7 +20,7 @@ params:
   forms:
     volunteer: "https://docs.google.com/forms/d/e/1FAIpQLSefFfnWR-NIcTJ51iGz1fiqXZ0eoXHxuDbc9iKOVc-ThcG7WQ/viewform"
     speaker: "https://docs.google.com/forms/d/e/1FAIpQLSdaxJJ8MUUNOQY9HnC0DfOp8g3F8cyUPAnvopPOugf12A256g/viewform"
-    exam_support: "https://docs.google.com/forms/d/e/REPLACE_WITH_EXAM_SUPPORT_FORM/viewform"
+    exam_support: "https://forms.gle/eYmX1nXgheZA1NmL8"
 
   homepage:
     hero:
