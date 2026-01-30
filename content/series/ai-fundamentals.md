@@ -8,7 +8,7 @@ start_date: 2024-10-20
 next_session_date: ""
 instructor: "Amara Eze"
 instructor_image: "/images/speakers/amara.svg"
-youtube_playlist: "https://www.youtube.com/@nigeriaazurecommunity1704"
+youtube_playlist: "https://www.youtube.com/@azure-nigeria"
 linkedin_discussion: "https://www.linkedin.com/company/azurenigeria"
 thumbnail: "/images/series/ai-fundamentals.svg"
 color: "green"
@@ -23,22 +23,22 @@ This four-part series delivered practical guidance on building AI solutions with
 
 - Service landscape and use cases
 - Responsible AI principles
-- [Watch Recording](https://www.youtube.com/@nigeriaazurecommunity1704)
+- [Watch Recording](https://www.youtube.com/@azure-nigeria)
 
 ### Session 2: Data & Model Prep
 
 - Data labeling and curation
 - Experimentation workflows
-- [Watch Recording](https://www.youtube.com/@nigeriaazurecommunity1704)
+- [Watch Recording](https://www.youtube.com/@azure-nigeria)
 
 ### Session 3: Deployment
 
 - Azure ML deployment patterns
 - Monitoring and governance
-- [Watch Recording](https://www.youtube.com/@nigeriaazurecommunity1704)
+- [Watch Recording](https://www.youtube.com/@azure-nigeria)
 
 ### Session 4: Building Apps
 
 - Integrating AI in real apps
 - Cost and performance tuning
-- [Watch Recording](https://www.youtube.com/@nigeriaazurecommunity1704)
+- [Watch Recording](https://www.youtube.com/@azure-nigeria)

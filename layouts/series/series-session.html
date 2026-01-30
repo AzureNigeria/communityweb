@@ -41,6 +41,9 @@
           <h4>{{ .Params.speaker }}</h4>
           <p class="muted">{{ .Params.speaker_title }}</p>
           <p>{{ .Params.speaker_bio }}</p>
+          {{ with .Params.speaker_linkedin }}
+            <a class="btn-secondary btn-small" href="{{ . }}" target="_blank" rel="noreferrer">LinkedIn</a>
+          {{ end }}
         </div>
         {{ with .Params.recording_url }}
           <div class="card">

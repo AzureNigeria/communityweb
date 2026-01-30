@@ -8,7 +8,7 @@ start_date: 2025-01-10
 next_session_date: ""
 instructor: "Adebayo Oluwaseun"
 instructor_image: "/images/speakers/adebayo.svg"
-youtube_playlist: "https://www.youtube.com/@nigeriaazurecommunity1704"
+youtube_playlist: "https://www.youtube.com/@azure-nigeria"
 linkedin_discussion: "https://www.linkedin.com/company/azurenigeria"
 thumbnail: "/images/series/devops-mastery.svg"
 color: "cyan"
@@ -23,13 +23,13 @@ This series is designed for engineers ready to ship and automate production-grad
 
 - Azure DevOps platform overview
 - Setting up projects and permissions
-- [Watch Recording](https://www.youtube.com/@nigeriaazurecommunity1704)
+- [Watch Recording](https://www.youtube.com/@azure-nigeria)
 
 ### Session 2: Repositories (Completed)
 
 - Git workflows with Azure Repos
 - Branch policies and code reviews
-- [Watch Recording](https://www.youtube.com/@nigeriaazurecommunity1704)
+- [Watch Recording](https://www.youtube.com/@azure-nigeria)
 
 ### Session 3: Build Pipelines (Completed)
 

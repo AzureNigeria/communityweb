@@ -14,7 +14,7 @@ registration_url: "https://www.meetup.com/azurenigeria"
 featured_image: "/images/events/azure-fundamentals.svg"
 tags: ["Azure Fundamentals", "AZ-900", "Cloud Basics"]
 description: "A recap of our introductory workshop covering core Azure services and exam strategy."
-youtube_url: "https://www.youtube.com/@nigeriaazurecommunity1704"
+youtube_url: "https://www.youtube.com/@azure-nigeria"
 slides_url: "https://speakerdeck.com/azure-nigeria/azure-fundamentals"
 github_url: "https://github.com/azurenigeria/azure-fundamentals"
 ---
@@ -30,5 +30,5 @@ Our kickoff Azure Fundamentals session brought together learners across Nigeria 
 
 ## Recording & Resources
 
-- [Watch the recording](https://www.youtube.com/@nigeriaazurecommunity1704)
+- [Watch the recording](https://www.youtube.com/@azure-nigeria)
 - [Slides](https://speakerdeck.com/azure-nigeria/azure-fundamentals) and [sample repo](https://github.com/azurenigeria/azure-fundamentals)
