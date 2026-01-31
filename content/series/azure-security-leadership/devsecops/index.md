@@ -15,6 +15,8 @@ registration_url: "https://www.meetup.com/azurenigeria/events/313123384/"
 featured_image: "/images/series/security-leadership.svg"
 description: "Embed security into Azure CI/CD pipelines with automated scanning and policy checks."
 tags: ["DevSecOps", "CI/CD", "Security", "Azure"]
+recording_url: "https://www.youtube.com/live/n3kmEs-i9cE?si=EFfl9J7KXeiAYh3j"
+content_url: "https://github.com/AzureNigeria/azure-shift-left-security-ci-cd/tree/main"
 ---
 
 ## Watch Live
