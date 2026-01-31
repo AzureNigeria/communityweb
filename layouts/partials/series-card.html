@@ -1,3 +1,22 @@
+{{ $status := lower .Params.status }}
+{{ $startUnix := 0 }}
+{{ $endUnix := 0 }}
+{{ with .Params.start_date }}
+  {{ $startUnix = (time .).Unix }}
+{{ end }}
+{{ with .Params.end_date }}
+  {{ $endUnix = (time .).Unix }}
+{{ end }}
+{{ if and (gt $startUnix 0) (gt $endUnix 0) }}
+  {{ $nowUnix := now.Unix }}
+  {{ if and (ge $nowUnix $startUnix) (le $nowUnix $endUnix) }}
+    {{ $status = "ongoing" }}
+  {{ else if lt $nowUnix $startUnix }}
+    {{ $status = "upcoming" }}
+  {{ else }}
+    {{ $status = "completed" }}
+  {{ end }}
+{{ end }}
 <article class="card series-card">
   <div class="card-image">
     <img src="{{ .Params.thumbnail | relURL }}" alt="Series cover for {{ .Title }}" loading="lazy" decoding="async" />
@@ -8,7 +27,7 @@
     <p class="muted">{{ .Params.description }}</p>
     <div class="meta">
       <span><img src="{{ "images/icons/calendar.svg" | relURL }}" alt="Sessions icon" />{{ .Params.total_sessions }} Sessions</span>
-      <span class="status-badge {{ .Params.status }}">{{ .Params.status | title }}</span>
+      <span class="status-badge {{ $status }}">{{ $status | title }}</span>
     </div>
     <div class="icon-row">
       <a href="{{ .Site.Data.social.youtube.url }}" target="_blank" rel="noreferrer" class="icon-btn"><img src="{{ "images/icons/youtube.svg" | relURL }}" alt="YouTube icon" />YouTube</a>

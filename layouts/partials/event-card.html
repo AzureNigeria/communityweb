@@ -1,4 +1,19 @@
-{{ $status := lower .Params.status }}
+{{ $nowUnix := now.Unix }}
+{{ $startUnix := .Date.Unix }}
+{{ $maxEndUnix := add $startUnix 18000 }}
+{{ $endUnix := $maxEndUnix }}
+{{ with .Params.end_date }}
+  {{ $candidate := (time .).Unix }}
+  {{ if lt $candidate $endUnix }}
+    {{ $endUnix = $candidate }}
+  {{ end }}
+{{ end }}
+{{ $status := "completed" }}
+{{ if lt $nowUnix $startUnix }}
+  {{ $status = "upcoming" }}
+{{ else if lt $nowUnix $endUnix }}
+  {{ $status = "ongoing" }}
+{{ end }}
 <article class="card event-card">
   <div class="card-image">
     <img src="{{ .Params.featured_image | relURL }}" alt="Event cover for {{ .Title }}" loading="lazy" decoding="async" />
@@ -21,6 +36,8 @@
     </div>
     {{ if or (eq $status "past") (eq $status "completed") }}
       <a class="btn-secondary btn-small" href="{{ .RelPermalink }}">View Recap</a>
+    {{ else if eq $status "ongoing" }}
+      <a class="btn-secondary btn-small" href="{{ .RelPermalink }}">Join Live</a>
     {{ else }}
       <a class="btn-primary" href="{{ .RelPermalink }}">Register</a>
     {{ end }}

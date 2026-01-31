@@ -1,9 +1,23 @@
 {{ define "main" }}
   {{ $series := .Parent }}
-  {{ $startISO := .Date.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $endISO := "" }}
+  {{ $startDate := .Date }}
+  {{ $startUnix := $startDate.Unix }}
+  {{ $endDate := $startDate.Add (duration "h" 3) }}
   {{ with .Params.end_date }}
-    {{ $endISO = (time .).Format "2006-01-02T15:04:05-07:00" }}
+    {{ $candidate := time . }}
+    {{ if lt $candidate.Unix $endDate.Unix }}
+      {{ $endDate = $candidate }}
+    {{ end }}
+  {{ end }}
+  {{ $endUnix := $endDate.Unix }}
+  {{ $startISO := $startDate.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $endISO := $endDate.Format "2006-01-02T15:04:05-07:00" }}
+  {{ $nowUnix := now.Unix }}
+  {{ $status := "completed" }}
+  {{ if lt $nowUnix $startUnix }}
+    {{ $status = "upcoming" }}
+  {{ else if lt $nowUnix $endUnix }}
+    {{ $status = "ongoing" }}
   {{ end }}
   <section class="page-hero">
     <div class="container">
@@ -31,10 +45,31 @@
         {{ .Content }}
       </article>
       <aside class="sidebar">
-        {{ with .Params.registration_url }}
-          <a class="btn-primary" href="{{ . }}" target="_blank" rel="noreferrer">Register</a>
+        {{ if eq $status "completed" }}
+          {{ $recordingLink := .Site.Data.social.youtube.url }}
+          {{ with .Params.recording_url }}
+            {{ $recordingLink = . }}
+          {{ end }}
+          <a class="btn-primary" href="{{ $recordingLink }}" target="_blank" rel="noreferrer">Watch Recording</a>
+          {{ $contentLink := "" }}
+          {{ if .Params.content_url }}
+            {{ $contentLink = .Params.content_url }}
+          {{ else if .Params.slides_url }}
+            {{ $contentLink = .Params.slides_url }}
+          {{ else if .Params.github_url }}
+            {{ $contentLink = .Params.github_url }}
+          {{ end }}
+          {{ if $contentLink }}
+            <a class="btn-secondary btn-small" href="{{ $contentLink }}" target="_blank" rel="noreferrer">Session Content</a>
+          {{ else }}
+            <button class="btn-secondary btn-small" type="button" disabled>Session Content</button>
+          {{ end }}
         {{ else }}
-          <button class="btn-primary" type="button" disabled>Registration Closed</button>
+          {{ with .Params.registration_url }}
+            <a class="btn-primary" href="{{ . }}" target="_blank" rel="noreferrer">Register</a>
+          {{ else }}
+            <button class="btn-primary" type="button" disabled>Registration Closed</button>
+          {{ end }}
         {{ end }}
         <div class="card speaker-card">
           <img src="{{ .Params.speaker_image | relURL }}" alt="{{ .Params.speaker }}" loading="lazy" decoding="async" />
@@ -45,10 +80,10 @@
             <a class="btn-secondary btn-small" href="{{ . }}" target="_blank" rel="noreferrer">LinkedIn</a>
           {{ end }}
         </div>
-        {{ with .Params.recording_url }}
+        {{ if and (ne $status "completed") (.Params.recording_url) }}
           <div class="card">
             <h4>Recording</h4>
-            <a class="btn-secondary btn-small" href="{{ . }}" target="_blank" rel="noreferrer">Watch Recording</a>
+            <a class="btn-secondary btn-small" href="{{ .Params.recording_url }}" target="_blank" rel="noreferrer">Watch Recording</a>
           </div>
         {{ end }}
         <div class="card">
@@ -59,8 +94,8 @@
           </button>
         </div>
         {{ if $endISO }}
-          {{ $start := .Date.Format "20060102T150405Z" }}
-          {{ $end := (time .Params.end_date).Format "20060102T150405Z" }}
+          {{ $start := $startDate.Format "20060102T150405Z" }}
+          {{ $end := $endDate.Format "20060102T150405Z" }}
           {{ $youtubeLink := "" }}
           {{ with .Site.Data.social.youtube.url }}
             {{ $youtubeLink = . }}

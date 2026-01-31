@@ -1,20 +1,83 @@
 {{ $now := now }}
-{{ $events := where (where .Site.RegularPages "Section" "events") "Params.status" "upcoming" }}
-{{ $events = where $events "Date" "ge" $now }}
-{{ $seriesSessions := where (where .Site.RegularPages "Section" "series") "Params.layout" "series-session" }}
-{{ $seriesSessions = where $seriesSessions "Date" "ge" $now }}
-{{ $candidates := slice }}
+{{ $nowUnix := $now.Unix }}
+{{ $eventMax := 18000 }}
+{{ $seriesMax := 10800 }}
+{{ $schedule := slice }}
+{{ $events := where .Site.RegularPages "Section" "events" }}
 {{ range $events }}
-  {{ $candidates = $candidates | append . }}
+  {{ $startUnix := .Date.Unix }}
+  {{ $endUnix := add $startUnix $eventMax }}
+  {{ with .Params.end_date }}
+    {{ $candidate := (time .).Unix }}
+    {{ if lt $candidate $endUnix }}
+      {{ $endUnix = $candidate }}
+    {{ end }}
+  {{ end }}
+  {{ $topic := .Title }}
+  {{ $subtopic := "" }}
+  {{ $titleParts := split .Title ":" }}
+  {{ if gt (len $titleParts) 1 }}
+    {{ $topic = index $titleParts 0 | strings.TrimSpace }}
+    {{ $subtopic = delimit (after 1 $titleParts) ":" | strings.TrimSpace }}
+  {{ else if .Params.subtitle }}
+    {{ $subtopic = .Params.subtitle }}
+  {{ else if .Params.description }}
+    {{ $subtopic = .Params.description }}
+  {{ end }}
+  {{ $ctaLink := .RelPermalink }}
+  {{ $ctaLabel := "View Details" }}
+  {{ with .Params.registration_url }}
+    {{ $ctaLink = . }}
+    {{ $ctaLabel = "Register" }}
+  {{ end }}
+  {{ $schedule = $schedule | append (dict "start" $startUnix "end" $endUnix "startISO" (.Date.Format "2006-01-02T15:04:05Z07:00") "startLabel" (.Date.Format "Jan 02, 2006 | 3:04 PM") "topic" $topic "subtopic" $subtopic "speaker" .Params.speaker "speakerTitle" .Params.speaker_title "ctaLink" $ctaLink "ctaLabel" $ctaLabel "ctaExternal" (hasPrefix $ctaLink "http")) }}
 {{ end }}
+{{ $seriesSessions := where (where .Site.RegularPages "Section" "series") "Params.layout" "series-session" }}
 {{ range $seriesSessions }}
-  {{ $candidates = $candidates | append . }}
+  {{ $session := . }}
+  {{ $startUnix := .Date.Unix }}
+  {{ $endUnix := add $startUnix $seriesMax }}
+  {{ with .Params.end_date }}
+    {{ $candidate := (time .).Unix }}
+    {{ if lt $candidate $endUnix }}
+      {{ $endUnix = $candidate }}
+    {{ end }}
+  {{ end }}
+  {{ $topic := .Title }}
+  {{ $subtopic := "" }}
+  {{ with .Parent }}
+    {{ $topic = .Title }}
+    {{ $subtopic = $session.Title }}
+  {{ else }}
+    {{ $subtopic = .Title }}
+  {{ end }}
+  {{ $ctaLink := .RelPermalink }}
+  {{ $ctaLabel := "View Details" }}
+  {{ with .Params.registration_url }}
+    {{ $ctaLink = . }}
+    {{ $ctaLabel = "Register" }}
+  {{ end }}
+  {{ $schedule = $schedule | append (dict "start" $startUnix "end" $endUnix "startISO" (.Date.Format "2006-01-02T15:04:05Z07:00") "startLabel" (.Date.Format "Jan 02, 2006 | 3:04 PM") "topic" $topic "subtopic" $subtopic "speaker" .Params.speaker "speakerTitle" .Params.speaker_title "ctaLink" $ctaLink "ctaLabel" $ctaLabel "ctaExternal" (hasPrefix $ctaLink "http")) }}
+{{ end }}
+{{ $live := slice }}
+{{ $upcoming := slice }}
+{{ range $schedule }}
+  {{ $start := index . "start" }}
+  {{ $end := index . "end" }}
+  {{ if and (ge $nowUnix $start) (lt $nowUnix $end) }}
+    {{ $live = $live | append . }}
+  {{ else if lt $nowUnix $start }}
+    {{ $upcoming = $upcoming | append . }}
+  {{ end }}
 {{ end }}
 {{ $next := false }}
-{{ if gt (len $candidates) 0 }}
-  {{ $next = index (sort $candidates "Date") 0 }}
+{{ if gt (len $live) 0 }}
+  {{ $next = index (sort $live "start") 0 }}
+{{ else if gt (len $upcoming) 0 }}
+  {{ $next = index (sort $upcoming "start") 0 }}
 {{ end }}
-<div class="countdown-card upcoming-card" id="upcoming-session">
+{{ $scheduleJson := $schedule | jsonify }}
+<div class="countdown-card upcoming-card" id="upcoming-session" data-schedule='{{ $scheduleJson | safeHTMLAttr }}'>
   <div class="countdown-header">
     <div class="countdown-kicker">
       <span class="live-badge" hidden>Live Now</span>
@@ -23,32 +86,11 @@
   </div>
   <div class="countdown-info">
     {{ if $next }}
-      {{ $isSeriesSession := and (eq $next.Section "series") (eq $next.Params.layout "series-session") }}
-      {{ $topic := $next.Title }}
-      {{ $subtopic := "" }}
-      {{ if $isSeriesSession }}
-        {{ with $next.Parent }}
-          {{ $topic = .Title }}
-          {{ $subtopic = $next.Title }}
-        {{ else }}
-          {{ $subtopic = $next.Title }}
-        {{ end }}
-      {{ else }}
-        {{ $titleParts := split $next.Title ":" }}
-        {{ if gt (len $titleParts) 1 }}
-          {{ $topic = index $titleParts 0 | strings.TrimSpace }}
-          {{ $subtopic = delimit (after 1 $titleParts) ":" | strings.TrimSpace }}
-        {{ else if $next.Params.subtitle }}
-          {{ $subtopic = $next.Params.subtitle }}
-        {{ else if $next.Params.description }}
-          {{ $subtopic = $next.Params.description }}
-        {{ end }}
-      {{ end }}
+      {{ $topic := index $next "topic" }}
+      {{ $subtopic := index $next "subtopic" }}
       <h3 class="upcoming-title">
-        <span class="upcoming-topic">{{ $topic }}</span>
-        {{ if $subtopic }}
-          <span class="upcoming-subtopic">{{ $subtopic }}</span>
-        {{ end }}
+        <span class="upcoming-topic" data-upcoming-topic>{{ $topic }}</span>
+        <span class="upcoming-subtopic {{ if not $subtopic }}hidden{{ end }}" data-upcoming-subtopic>{{ $subtopic }}</span>
       </h3>
     {{ else }}
       <h3 class="upcoming-title">
@@ -59,7 +101,7 @@
   </div>
   <div class="countdown-body">
     {{ if $next }}
-      <div class="countdown" data-countdown="{{ $next.Date.Format "2006-01-02T15:04:05Z07:00" }}">
+      <div class="countdown" data-countdown="{{ index $next "startISO" }}" data-end="{{ index $next "end" }}">
         <div class="time-block">
           <span class="number" data-days>00</span>
           <span class="label">Days</span>
@@ -79,20 +121,17 @@
       </div>
       <div class="countdown-meta">
         <div class="upcoming-meta">
-          <span>Starts {{ $next.Date.Format "Jan 02, 2006 | 3:04 PM" }} WAT</span>
-          {{ with $next.Params.speaker }}
-            <span class="upcoming-speaker">{{ . }}{{ with $next.Params.speaker_title }} <span class="speaker-title">- {{ . }}</span>{{ end }}</span>
-          {{ end }}
+          <span>Starts <span data-upcoming-start>{{ index $next "startLabel" }}</span> WAT</span>
+          <span class="upcoming-speaker {{ if not (index $next "speaker") }}hidden{{ end }}">
+            <span data-upcoming-speaker-name>{{ index $next "speaker" | default "" }}</span>
+            <span class="speaker-title {{ if not (index $next "speakerTitle") }}hidden{{ end }}" data-upcoming-speaker-title>{{ with (index $next "speakerTitle") }}- {{ . }}{{ end }}</span>
+          </span>
         </div>
         <div class="countdown-actions">
-          {{ $ctaLink := $next.RelPermalink }}
-          {{ $ctaLabel := "View Details" }}
-          {{ with $next.Params.registration_url }}
-            {{ $ctaLink = . }}
-            {{ $ctaLabel = "Register" }}
-          {{ end }}
-          {{ $isExternal := hasPrefix $ctaLink "http" }}
-          <a class="btn-secondary btn-small" href="{{ $ctaLink }}"{{ if $isExternal }} target="_blank" rel="noreferrer"{{ end }}>{{ $ctaLabel }}</a>
+          {{ $ctaLink := index $next "ctaLink" }}
+          {{ $ctaLabel := index $next "ctaLabel" }}
+          {{ $isExternal := index $next "ctaExternal" }}
+          <a class="btn-secondary btn-small" data-upcoming-cta href="{{ $ctaLink }}"{{ if $isExternal }} target="_blank" rel="noreferrer"{{ end }}>{{ $ctaLabel }}</a>
         </div>
       </div>
     {{ else }}

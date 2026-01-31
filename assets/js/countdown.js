@@ -5,6 +5,17 @@
 
     const targetTime = new Date(target).getTime();
     const now = Date.now();
+    const end = Number(container.getAttribute("data-end"));
+    if (Number.isFinite(end) && end > 0 && now >= end * 1000) {
+      const card = container.closest(".countdown-card");
+      const badge = card ? card.querySelector(".live-badge") : null;
+      if (badge) badge.hidden = true;
+      container.classList.remove("live");
+      container.querySelectorAll(".number").forEach((el) => {
+        el.textContent = "00";
+      });
+      return;
+    }
     const diff = targetTime - now;
 
     if (diff <= 0) {
@@ -33,6 +44,99 @@
     setValue("[data-hours]", hours);
     setValue("[data-minutes]", minutes);
     setValue("[data-seconds]", remaining);
+  };
+
+  const buildUpcomingSchedule = (card) => {
+    const raw = card.dataset.schedule;
+    if (!raw) return null;
+    let schedule = [];
+    try {
+      schedule = JSON.parse(raw);
+    } catch (error) {
+      return null;
+    }
+    if (!Array.isArray(schedule) || schedule.length === 0) {
+      return null;
+    }
+    const normalize = (item) => ({
+      ...item,
+      start: Number(item.start),
+      end: Number(item.end),
+    });
+    const normalized = schedule.map(normalize).filter((item) => item.start && item.end);
+    if (!normalized.length) return null;
+
+    return {
+      card,
+      countdown: card.querySelector(".countdown"),
+      topic: card.querySelector("[data-upcoming-topic]"),
+      subtopic: card.querySelector("[data-upcoming-subtopic]"),
+      start: card.querySelector("[data-upcoming-start]"),
+      speakerWrap: card.querySelector(".upcoming-speaker"),
+      speakerName: card.querySelector("[data-upcoming-speaker-name]"),
+      speakerTitle: card.querySelector("[data-upcoming-speaker-title]"),
+      cta: card.querySelector("[data-upcoming-cta]"),
+      schedule: normalized.sort((a, b) => a.start - b.start),
+      currentKey: null,
+    };
+  };
+
+  const selectUpcomingItem = (items, now) => {
+    const live = items.filter(
+      (item) => now >= item.start * 1000 && now < item.end * 1000
+    );
+    if (live.length) {
+      return live[0];
+    }
+    const upcoming = items.filter((item) => now < item.start * 1000);
+    if (upcoming.length) {
+      return upcoming[0];
+    }
+    return null;
+  };
+
+  const updateUpcomingCard = (state) => {
+    const now = Date.now();
+    const next = selectUpcomingItem(state.schedule, now);
+    if (!next) return;
+    const key = `${next.start}-${next.ctaLink}-${next.topic}`;
+    if (state.currentKey === key) return;
+    state.currentKey = key;
+
+    if (state.topic) state.topic.textContent = next.topic || "";
+    if (state.subtopic) {
+      state.subtopic.textContent = next.subtopic || "";
+      state.subtopic.classList.toggle("hidden", !next.subtopic);
+    }
+    if (state.start) state.start.textContent = next.startLabel || "";
+    if (state.speakerWrap) {
+      const hasSpeaker = Boolean(next.speaker);
+      state.speakerWrap.classList.toggle("hidden", !hasSpeaker);
+      if (state.speakerName) state.speakerName.textContent = next.speaker || "";
+      if (state.speakerTitle) {
+        state.speakerTitle.textContent = next.speakerTitle ? `- ${next.speakerTitle}` : "";
+        state.speakerTitle.classList.toggle("hidden", !next.speakerTitle);
+      }
+    }
+    if (state.cta) {
+      state.cta.textContent = next.ctaLabel || "View Details";
+      state.cta.setAttribute("href", next.ctaLink || "#");
+      if (next.ctaExternal) {
+        state.cta.setAttribute("target", "_blank");
+        state.cta.setAttribute("rel", "noreferrer");
+      } else {
+        state.cta.removeAttribute("target");
+        state.cta.removeAttribute("rel");
+      }
+    }
+    if (state.countdown) {
+      if (next.startISO) {
+        state.countdown.setAttribute("data-countdown", next.startISO);
+      }
+      if (next.end) {
+        state.countdown.setAttribute("data-end", String(next.end));
+      }
+    }
   };
 
   const bindTabs = () => {
@@ -136,9 +240,20 @@
 
   const init = () => {
     const countdowns = document.querySelectorAll(".countdown");
+    const upcomingCards = [];
+    document.querySelectorAll(".countdown-card[data-schedule]").forEach((card) => {
+      const schedule = buildUpcomingSchedule(card);
+      if (schedule) {
+        upcomingCards.push(schedule);
+        updateUpcomingCard(schedule);
+      }
+    });
     if (countdowns.length) {
       countdowns.forEach(updateCountdown);
       setInterval(() => {
+        if (upcomingCards.length) {
+          upcomingCards.forEach(updateUpcomingCard);
+        }
         countdowns.forEach(updateCountdown);
       }, 1000);
     }

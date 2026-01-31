@@ -3,19 +3,39 @@
   {{ $seriesPattern := printf "^%s" $seriesDir }}
   {{ $sessions := sort (where .Site.RegularPages "File.Dir" "like" $seriesPattern) "Date" }}
   {{ $now := now }}
-  {{ $upcoming := where $sessions "Date" "ge" $now }}
-  {{ $past := where $sessions "Date" "lt" $now }}
+  {{ $nowUnix := $now.Unix }}
+  {{ $upcoming := slice }}
+  {{ $past := slice }}
+  {{ $live := slice }}
+  {{ range $sessions }}
+    {{ $startUnix := .Date.Unix }}
+    {{ $endUnix := add $startUnix 10800 }}
+    {{ with .Params.end_date }}
+      {{ $candidate := (time .).Unix }}
+      {{ if lt $candidate $endUnix }}
+        {{ $endUnix = $candidate }}
+      {{ end }}
+    {{ end }}
+    {{ if and (ge $nowUnix $startUnix) (lt $nowUnix $endUnix) }}
+      {{ $live = $live | append . }}
+      {{ $upcoming = $upcoming | append . }}
+    {{ else if lt $nowUnix $startUnix }}
+      {{ $upcoming = $upcoming | append . }}
+    {{ else }}
+      {{ $past = $past | append . }}
+    {{ end }}
+  {{ end }}
   {{ $next := false }}
-  {{ if gt (len $upcoming) 0 }}
-    {{ $next = index $upcoming 0 }}
+  {{ if gt (len $live) 0 }}
+    {{ $next = index (sort $live "Date") 0 }}
+  {{ else if gt (len $upcoming) 0 }}
+    {{ $next = index (sort $upcoming "Date") 0 }}
   {{ end }}
   {{ $statusLabel := "Completed" }}
-  {{ if gt (len $upcoming) 0 }}
-    {{ if gt (len $past) 0 }}
-      {{ $statusLabel = "Ongoing" }}
-    {{ else }}
-      {{ $statusLabel = "Upcoming" }}
-    {{ end }}
+  {{ if gt (len $live) 0 }}
+    {{ $statusLabel = "Ongoing" }}
+  {{ else if gt (len $upcoming) 0 }}
+    {{ $statusLabel = "Upcoming" }}
   {{ end }}
   {{ $totalSessions := len $sessions }}
   {{ if eq $totalSessions 0 }}

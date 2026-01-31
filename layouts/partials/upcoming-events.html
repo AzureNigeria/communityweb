@@ -1,6 +1,22 @@
-{{ $limit := .Site.Params.homepage.events_to_show }} {{ $events := where (where
-.Site.RegularPages "Section" "events") "Params.status" "upcoming" }} {{ $events
-= first $limit (sort $events "Date") }}
+{{ $limit := .Site.Params.homepage.events_to_show }}
+{{ $nowUnix := now.Unix }}
+{{ $events := where .Site.RegularPages "Section" "events" }}
+{{ $upcoming := slice }}
+{{ range $events }}
+  {{ $startUnix := .Date.Unix }}
+  {{ $maxEndUnix := add $startUnix 18000 }}
+  {{ $endUnix := $maxEndUnix }}
+  {{ with .Params.end_date }}
+    {{ $candidate := (time .).Unix }}
+    {{ if lt $candidate $endUnix }}
+      {{ $endUnix = $candidate }}
+    {{ end }}
+  {{ end }}
+  {{ if lt $nowUnix $endUnix }}
+    {{ $upcoming = $upcoming | append . }}
+  {{ end }}
+{{ end }}
+{{ $events = first $limit (sort $upcoming "Date") }}
 <section class="section">
   <div class="container">
     <div class="section-heading">

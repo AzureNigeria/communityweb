@@ -99,6 +99,8 @@ github_url: ""
 
 1. Add event body content below the front matter.
 
+**Admin note:** Event status is now computed automatically based on `date` and `end_date`. Events are treated as live for a maximum of 5 hours after the start time, even if a longer `end_date` is entered. Use `end_date` only to shorten the live window.
+
 ### New Series
 
 1. Create a new file in `content/series/` for single-page series.
@@ -171,6 +173,8 @@ tags: ["Tag1", "Tag2"]
 ```
 
 1. Add the session body content below the front matter and keep dates in chronological order.
+
+**Admin note:** Series status is derived from `start_date` and `end_date` on the series index. Session end times are auto-capped at 3 hours after `date` (use `end_date` only to shorten). For past sessions, the register button is replaced by “Watch Recording” and “Session Content,” so add `recording_url` and `content_url` when available.
 
 ### New Blog Post
 

@@ -1,5 +1,20 @@
 {{ define "main" }}
-  {{ $status := lower .Params.status }}
+  {{ $nowUnix := now.Unix }}
+  {{ $startUnix := .Date.Unix }}
+  {{ $maxEndUnix := add $startUnix 18000 }}
+  {{ $endUnix := $maxEndUnix }}
+  {{ with .Params.end_date }}
+    {{ $candidate := (time .).Unix }}
+    {{ if lt $candidate $endUnix }}
+      {{ $endUnix = $candidate }}
+    {{ end }}
+  {{ end }}
+  {{ $status := "completed" }}
+  {{ if lt $nowUnix $startUnix }}
+    {{ $status = "upcoming" }}
+  {{ else if lt $nowUnix $endUnix }}
+    {{ $status = "ongoing" }}
+  {{ end }}
   {{ $startISO := .Date.Format "2006-01-02T15:04:05-07:00" }}
   {{ $endISO := "" }}
   {{ with .Params.end_date }}

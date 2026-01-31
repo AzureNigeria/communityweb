@@ -12,13 +12,34 @@
         <button class="tab active" data-tab="upcoming">Upcoming</button>
         <button class="tab" data-tab="past">Past Events</button>
       </div>
+      {{ $nowUnix := now.Unix }}
+      {{ $upcoming := slice }}
+      {{ $past := slice }}
+      {{ range .Pages }}
+        {{ $startUnix := .Date.Unix }}
+        {{ $maxEndUnix := add $startUnix 18000 }}
+        {{ $endUnix := $maxEndUnix }}
+        {{ with .Params.end_date }}
+          {{ $candidate := (time .).Unix }}
+          {{ if lt $candidate $endUnix }}
+            {{ $endUnix = $candidate }}
+          {{ end }}
+        {{ end }}
+        {{ if lt $nowUnix $endUnix }}
+          {{ $upcoming = $upcoming | append . }}
+        {{ else }}
+          {{ $past = $past | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $upcoming = sort $upcoming "Date" }}
+      {{ $past = sort $past "Date" "desc" }}
       <div class="grid cards-3" data-tab-content="events" data-tab-panel="upcoming">
-        {{ range where .Pages "Params.status" "upcoming" }}
+        {{ range $upcoming }}
           {{ partial "event-card.html" . }}
         {{ end }}
       </div>
       <div class="grid cards-3 hidden" data-tab-content="events" data-tab-panel="past">
-        {{ range where .Pages "Params.status" "past" }}
+        {{ range $past }}
           {{ partial "event-card.html" . }}
         {{ end }}
       </div>

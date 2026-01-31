@@ -6,16 +6,46 @@
       <p class="lead">Structured tracks that take you from fundamentals to advanced Azure skills.</p>
     </div>
   </section>
-  {{ $current := where .Pages "Params.status" "ongoing" }}
-  {{ $upcoming := where .Pages "Params.status" "upcoming" }}
-  {{ $past := where .Pages "Params.status" "completed" }}
+  {{ $seriesPages := where .Pages "Params.total_sessions" "gt" 0 }}
+  {{ $now := now }}
+  {{ $current := slice }}
+  {{ $upcoming := slice }}
+  {{ $past := slice }}
+  {{ range $seriesPages }}
+    {{ $status := lower .Params.status }}
+    {{ $startUnix := 0 }}
+    {{ $endUnix := 0 }}
+    {{ with .Params.start_date }}
+      {{ $startUnix = (time .).Unix }}
+    {{ end }}
+    {{ with .Params.end_date }}
+      {{ $endUnix = (time .).Unix }}
+    {{ end }}
+    {{ if and (gt $startUnix 0) (gt $endUnix 0) }}
+      {{ $nowUnix := $now.Unix }}
+      {{ if and (ge $nowUnix $startUnix) (le $nowUnix $endUnix) }}
+        {{ $status = "ongoing" }}
+      {{ else if lt $nowUnix $startUnix }}
+        {{ $status = "upcoming" }}
+      {{ else }}
+        {{ $status = "completed" }}
+      {{ end }}
+    {{ end }}
+    {{ if eq $status "ongoing" }}
+      {{ $current = $current | append . }}
+    {{ else if eq $status "upcoming" }}
+      {{ $upcoming = $upcoming | append . }}
+    {{ else if or (eq $status "completed") (eq $status "past") }}
+      {{ $past = $past | append . }}
+    {{ end }}
+  {{ end }}
   {{ $hasUpcoming := gt (len $upcoming) 0 }}
   {{ $hasCurrent := gt (len $current) 0 }}
   {{ $defaultTab := "past" }}
-  {{ if $hasUpcoming }}
-    {{ $defaultTab = "upcoming" }}
-  {{ else if $hasCurrent }}
+  {{ if $hasCurrent }}
     {{ $defaultTab = "current" }}
+  {{ else if $hasUpcoming }}
+    {{ $defaultTab = "upcoming" }}
   {{ end }}
   <section class="section">
     <div class="container">
