@@ -7,7 +7,7 @@ params:
   description: "Building Cloud Skills Across Nigeria - Azure Nigeria Community"
   author: "Azure Nigeria Community"
   theme_creator: "Olu Olofinyo"
-  share_image: "/images/azure-nigeria.png"
+  share_image: "/images/share-card.jpg"
 
   newsletter:
     enabled: true

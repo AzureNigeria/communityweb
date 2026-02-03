@@ -8,8 +8,9 @@
   {{ $pageDescription = .Summary }}
 {{ end }}
 {{ $pageDescription = $pageDescription | plainify | truncate 160 }}
-{{ $defaultShareImage := .Site.Params.share_image | default "images/azure-nigeria.png" }}
+{{ $defaultShareImage := .Site.Params.share_image | default "/images/azure-nigeria.png" }}
 {{ $ogImage := $defaultShareImage | absURL }}
+{{ $ogImageType := "image/png" }}
 {{ $ogType := "website" }}
 {{ if and .IsPage (or (eq .Section "blog") (eq .Section "events") (eq .Section "series")) }}
   {{ $ogType = "article" }}
@@ -18,11 +19,19 @@
 {{ with .Site.Data.social.twitter.url }}
   {{ $twitterHandle = replace (replace . "https://twitter.com/" "@") "http://twitter.com/" "@" }}
 {{ end }}
-{{ with .Params.featured_image }}
-  {{ $candidate := . | absURL }}
+{{ if .Params.share_image }}
+  {{ $ogImage = .Params.share_image | absURL }}
+{{ else if .Params.featured_image }}
+  {{ $candidate := .Params.featured_image | absURL }}
   {{ if not (hasSuffix (lower $candidate) ".svg") }}
     {{ $ogImage = $candidate }}
   {{ end }}
+{{ end }}
+{{ $ogLower := lower $ogImage }}
+{{ if or (hasSuffix $ogLower ".jpg") (hasSuffix $ogLower ".jpeg") }}
+  {{ $ogImageType = "image/jpeg" }}
+{{ else if hasSuffix $ogLower ".webp" }}
+  {{ $ogImageType = "image/webp" }}
 {{ end }}
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,6 +50,8 @@
 <meta property="og:type" content="{{ $ogType }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:image" content="{{ $ogImage }}" />
+<meta property="og:image:secure_url" content="{{ $ogImage }}" />
+<meta property="og:image:type" content="{{ $ogImageType }}" />
 <meta property="og:image:alt" content="{{ $pageTitle }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:locale" content="en_US" />
@@ -48,7 +59,9 @@
 <meta name="twitter:title" content="{{ $pageTitle }}" />
 <meta name="twitter:description" content="{{ $pageDescription }}" />
 <meta name="twitter:image" content="{{ $ogImage }}" />
+<meta name="twitter:image:alt" content="{{ $pageTitle }}" />
 {{ if $twitterHandle }}
   <meta name="twitter:site" content="{{ $twitterHandle }}" />
 {{ end }}
 <link rel="icon" href="{{ "/favicon.png" | relURL }}" type="image/png" />
+<link rel="apple-touch-icon" href="{{ "/favicon.png" | relURL }}" />
