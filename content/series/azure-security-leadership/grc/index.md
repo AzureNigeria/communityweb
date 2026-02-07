@@ -15,6 +15,7 @@ registration_url: "https://www.meetup.com/azurenigeria/"
 featured_image: "/images/series/security-leadership.svg"
 description: "Modernize governance, risk, and compliance for AI-driven enterprises."
 tags: ["Governance", "Risk", "Compliance", "AI"]
+recording_url: "https://www.youtube.com/watch?v=zic_sR8DakM"
 ---
 
 ## Watch Live
@@ -37,4 +38,4 @@ We will explore how to embed responsible AI governance into existing frameworks,
 
 ## Session Credits
 
-Hosted by Raphael Gabriels.
+Hosted by Raphael Gabriel.
