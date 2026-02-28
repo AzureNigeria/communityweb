@@ -21,7 +21,7 @@ content_url: "https://github.com/AzureNigeria/azure-shift-left-security-ci-cd/tr
 
 ## Watch Live
 
-> **Join on YouTube**  
+> **Join on YouTube**
 > This session streams live. Open the link a few minutes early and bring your questions: https://www.youtube.com/@azure-nigeria
 
 ## Session Abstract

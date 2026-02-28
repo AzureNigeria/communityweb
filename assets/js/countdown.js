@@ -63,7 +63,9 @@
       start: Number(item.start),
       end: Number(item.end),
     });
-    const normalized = schedule.map(normalize).filter((item) => item.start && item.end);
+    const normalized = schedule
+      .map(normalize)
+      .filter((item) => item.start && item.end);
     if (!normalized.length) return null;
 
     return {
@@ -83,7 +85,7 @@
 
   const selectUpcomingItem = (items, now) => {
     const live = items.filter(
-      (item) => now >= item.start * 1000 && now < item.end * 1000
+      (item) => now >= item.start * 1000 && now < item.end * 1000,
     );
     if (live.length) {
       return live[0];
@@ -114,7 +116,9 @@
       state.speakerWrap.classList.toggle("hidden", !hasSpeaker);
       if (state.speakerName) state.speakerName.textContent = next.speaker || "";
       if (state.speakerTitle) {
-        state.speakerTitle.textContent = next.speakerTitle ? `- ${next.speakerTitle}` : "";
+        state.speakerTitle.textContent = next.speakerTitle
+          ? `- ${next.speakerTitle}`
+          : "";
         state.speakerTitle.classList.toggle("hidden", !next.speakerTitle);
       }
     }
@@ -241,13 +245,15 @@
   const init = () => {
     const countdowns = document.querySelectorAll(".countdown");
     const upcomingCards = [];
-    document.querySelectorAll(".countdown-card[data-schedule]").forEach((card) => {
-      const schedule = buildUpcomingSchedule(card);
-      if (schedule) {
-        upcomingCards.push(schedule);
-        updateUpcomingCard(schedule);
-      }
-    });
+    document
+      .querySelectorAll(".countdown-card[data-schedule]")
+      .forEach((card) => {
+        const schedule = buildUpcomingSchedule(card);
+        if (schedule) {
+          upcomingCards.push(schedule);
+          updateUpcomingCard(schedule);
+        }
+      });
     if (countdowns.length) {
       countdowns.forEach(updateCountdown);
       setInterval(() => {

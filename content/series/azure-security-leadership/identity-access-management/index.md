@@ -19,7 +19,7 @@ tags: ["Identity", "Zero Trust", "Azure"]
 
 ## Watch Live
 
-> **Join on YouTube**  
+> **Join on YouTube**
 > This session streams live. Open the link a few minutes early and bring your questions: https://www.youtube.com/@azure-nigeria
 
 ## Session Abstract

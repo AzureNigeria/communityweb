@@ -15,11 +15,12 @@ registration_url: "https://www.meetup.com/azurenigeria/"
 featured_image: "/images/series/security-leadership.svg"
 description: "Apply Zero Trust to Azure control plane identities, APIs, and automation."
 tags: ["Zero Trust", "Azure", "Control Plane"]
+recording_url: "https://www.youtube.com/watch?v=R2yzE2R__FA"
 ---
 
 ## Watch Live
 
-> **Join on YouTube**  
+> **Join on YouTube**
 > This session streams live. Open the link a few minutes early and bring your questions: https://www.youtube.com/@azure-nigeria
 
 ## Session Abstract
