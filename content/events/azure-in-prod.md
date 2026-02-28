@@ -1,8 +1,8 @@
 ---
 title: "From Idea to Production: AI Agents on Azure"
-date: 2026-03-07T11:00:00+01:00
+date: 2026-03-07T17:00:00+01:00
 publishDate: 2025-01-20T00:00:00+01:00
-end_date: 2026-03-07T12:00:00+01:00
+end_date: 2026-03-07T18:00:00+01:00
 location: "Virtual"
 speaker: "Raphael Gab-Momoh(MVP)"
 speaker_title: "Cloud and Devops Architect | Microsoft®MVP"
