@@ -1,20 +1,21 @@
 ---
-title: "Azure in Production"
+title: "From Idea to Production: AI Agents on Azure"
 date: 2026-03-07T11:00:00+01:00
 publishDate: 2025-01-20T00:00:00+01:00
 end_date: 2026-03-07T12:00:00+01:00
 location: "Virtual"
-speaker: "Azure Nigeria Community"
-speaker_title: "Community Hosts"
+speaker: "Raphael Gab-Momoh(MVP)"
+speaker_title: "Cloud and Devops Architect | Microsoft®MVP"
 speaker_company: "Azure Nigeria"
 speaker_image: "/images/team/team.svg"
-speaker_bio: "Community hosts leading practical discussions on real-world Azure delivery."
+speaker_bio: "Raphael Gab-Momoh is a skilled DevOps and Cloud Engineer with a strong foundation in Node.js, Haskell, and Python. He has delivered scalable, secure, and high-availability solutions using open-source tools like Git, Docker, and Kubernetes. Currently specializing in FinOps—the data-driven side of cloud computing—Raphael focuses on cloud billing optimization and cost efficiency."
+speaker_linkedin: "https://www.linkedin.com/in/rgmh/"
 event_type: "webinar"
 status: "upcoming"
 registration_url: "https://www.meetup.com/azurenigeria"
 featured_image: "/images/events/security-leadership.svg"
-tags: ["Cloud Leadership", "Production", "Azure"]
-description: "Cloud Leadership Series session on Azure in Production featuring Azure engineers sharing real-world production use cases."
+tags: ["Cloud Leadership", "Production", "Azure", "AI"]
+description: "From Idea to Production: AI Agents on Azure."
 youtube_url: "https://www.youtube.com/@azure-nigeria"
 slides_url: ""
 github_url: ""
@@ -27,13 +28,22 @@ github_url: ""
 
 ## Session Abstract
 
-Production is where cloud architecture meets reality: traffic spikes, customer expectations, and operational pressure. This Azure in Production session focuses on how teams build reliability and performance without losing agility. Expect practical stories and guidance from Azure engineers who have learned these lessons the hard way.
+Building AI agents is easy in a demo. Shipping them securely and reliably to production is where the real work begins.
 
-We will cover what operational excellence looks like day to day, how teams prepare for launches, and which habits keep production environments stable when things change fast.
+This session walks through what it truly takes to move from idea to production when building AI agents on Microsoft Azure. We will break down the architecture behind intelligent agents, examine the core services within the Microsoft ecosystem that power them, and walk through practical implementation patterns that teams can use immediately.
 
-### What you'll learn:
+You will gain clarity on how to design, configure, validate, and operationalize AI agents — not just to pass an assessment, but to run them in real environments with scalability, governance, and cost-awareness in mind.
 
-- How to think about scalability and performance tuning for live Azure workloads.
-- The operational signals and practices that prevent small issues from becoming outages.
-- Incident response habits that keep teams focused and effective under pressure.
-- A readiness mindset for taking Azure apps from staging to real-world demand.
+Whether you are preparing for an AI-focused certification, building internal copilots, or experimenting with autonomous workflows, this session will help you understand what production readiness actually requires.
+
+### Key Takeaways:
+
+- The core architecture patterns behind AI agents on Azure.
+- How to connect models, tools, memory, and orchestration layers effectively.
+- Validation and testing approaches before moving to production.
+- Governance, monitoring, and cost controls for enterprise AI agents.
+- Practical Azure services to use when deploying real-world AI solutions.
+
+## Hosted By
+
+Adeyemi Gbeleyi
