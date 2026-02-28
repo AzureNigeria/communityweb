@@ -15,6 +15,7 @@ registration_url: "https://www.meetup.com/azurenigeria/"
 featured_image: "/images/series/security-leadership.svg"
 description: "Red-team AI systems to uncover safety vulnerabilities before attackers do."
 tags: ["AI Security", "Red Teaming", "Safety"]
+recording_url: "https://www.youtube.com/watch?v=bmxvvTCn6Qc"
 ---
 
 ## Watch Live

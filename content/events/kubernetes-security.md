@@ -16,7 +16,7 @@ registration_url: "https://www.meetup.com/azurenigeria/"
 featured_image: "/images/events/security-leadership.svg"
 tags: ["Azure", "Kubernetes", "Network Security", "Production"]
 description: "Azure Network Security with Kubernetes"
-youtube_url: "https://www.youtube.com/@azure-nigeria"
+youtube_url: "https://www.youtube.com/watch?v=mN09cFNwJwE"
 slides_url: ""
 github_url: ""
 ---
