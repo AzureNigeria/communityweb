@@ -12,11 +12,11 @@ speaker_bio: "Raphael Gab-Momoh is a skilled DevOps and Cloud Engineer with a st
 speaker_linkedin: "https://www.linkedin.com/in/rgmh/"
 event_type: "webinar"
 status: "upcoming"
-registration_url: "https://www.meetup.com/azurenigeria"
+registration_url: "https://www.meetup.com/azurenigeria/events/313574882/"
 featured_image: "/images/events/security-leadership.svg"
 tags: ["Cloud Leadership", "Production", "Azure", "AI"]
 description: "From Idea to Production: AI Agents on Azure."
-youtube_url: "https://www.youtube.com/@azure-nigeria"
+youtube_url: "https://www.youtube.com/watch?v=KXzQwGr-L2g"
 slides_url: ""
 github_url: ""
 ---
