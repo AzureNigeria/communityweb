@@ -11,13 +11,13 @@ speaker_image: "/images/team/team.svg"
 speaker_bio: "Raphael Gab-Momoh is a skilled DevOps and Cloud Engineer with a strong foundation in Node.js, Haskell, and Python. He has delivered scalable, secure, and high-availability solutions using open-source tools like Git, Docker, and Kubernetes. Currently specializing in FinOps—the data-driven side of cloud computing—Raphael focuses on cloud billing optimization and cost efficiency."
 speaker_linkedin: "https://www.linkedin.com/in/rgmh/"
 event_type: "webinar"
-status: "upcoming"
+status: "past"
 registration_url: "https://www.meetup.com/azurenigeria/events/313574882/"
 featured_image: "/images/events/security-leadership.svg"
 tags: ["Cloud Leadership", "Production", "Azure", "AI"]
 description: "From Idea to Production: AI Agents on Azure."
 youtube_url: "https://www.youtube.com/watch?v=KXzQwGr-L2g"
-slides_url: ""
+slides_url: "https://learn.microsoft.com/en-us/credentials/applied-skills/build-a-generative-ai-chat-app/"
 github_url: ""
 ---
 

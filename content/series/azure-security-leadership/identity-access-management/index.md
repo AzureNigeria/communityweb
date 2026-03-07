@@ -9,18 +9,21 @@ speaker: "Oluwaseun Deborah Adebayo"
 speaker_title: "Speaker"
 speaker_company: ""
 speaker_image: "/images/team/team.svg"
-speaker_bio: "Speaker profile to be provided."
+speaker_bio: "Oluwaseun (Deborah) Adebayo is an AI Learning Architect and Cloud Security Solutions Expert with a strong focus on Identity and Access Management, Zero Trust architecture, and Microsoft Security & Data Governance. She works with organisations and academic institutions to design secure cloud environments, develop AI and security learning curricula, and enable teams to adopt modern security practices confidently.
+
+With hands-on experience delivering cloud security solutions and training across diverse environments, Oluwaseun is passionate about bridging the gap between strategy and implementation—helping professionals understand not just what to secure, but how and why. She is also an active mentor, trainer, and speaker within the tech and cybersecurity community."
 speaker_linkedin: "https://www.linkedin.com/in/oluwaseun-a-49311b211/"
-registration_url: "https://www.meetup.com/azurenigeria/"
+registration_url: "https://www.meetup.com/azurenigeria/events/313682464"
 featured_image: "/images/series/security-leadership.svg"
 description: "Build secure cloud access with identity-first Zero Trust in Azure."
 tags: ["Identity", "Zero Trust", "Azure"]
+youtube_url: "https://www.youtube.com/watch?v=cuGcc7j6PlQ"
 ---
 
 ## Watch Live
 
 > **Join on YouTube**
-> This session streams live. Open the link a few minutes early and bring your questions: https://www.youtube.com/@azure-nigeria
+> This session streams live. Open the link a few minutes early and bring your questions: https://www.youtube.com/watch?v=cuGcc7j6PlQ
 
 ## Session Abstract
 

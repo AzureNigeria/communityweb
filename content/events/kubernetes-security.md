@@ -11,7 +11,7 @@ speaker_image: "/images/team/team.svg"
 speaker_bio: "I am a Platform and DevOps Engineer working primarily on Azure, with a strong focus on AKS, networking, and security in production environments. My day-to-day work involves designing and operating Kubernetes platforms that handle live traffic, integrate with Azure PaaS services, and meet real security and reliability requirements, and architecting infrastructure. I spend a lot of time dealing with practical challenges such as ingress and egress control, network policies, private endpoints, DNS issues, and observability across Kubernetes and Azure networking. Most of my experience comes from running and troubleshooting these systems in production, where design decisions have clear operational consequences. I enjoy sharing lessons learned from these environments to help other teams build more secure and predictable AKS platforms."
 speaker_linkedin: "https://www.linkedin.com/in/olaitan-falolu-cloud-engineer/"
 event_type: "webinar"
-status: "upcoming"
+status: "past"
 registration_url: "https://www.meetup.com/azurenigeria/"
 featured_image: "/images/events/security-leadership.svg"
 tags: ["Azure", "Kubernetes", "Network Security", "Production"]
